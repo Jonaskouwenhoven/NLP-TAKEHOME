@@ -1,0 +1,125 @@
+{
+    "test_type": "Lexical Semantics - Polysemy",
+    "test_category": "Directional Expectation tests (DIRs)",
+    "tests": [
+    {
+    "sentence": "The bank refused to give me a loan.",
+    "propbank_golden_labels": {
+    "V": "refuse",
+    "ARG0": "The bank",
+    "ARG1": "to give me a loan"
+    }
+    },
+    {
+    "sentence": "The bank of the river is a popular spot for fishing.",
+    "propbank_golden_labels": {
+    "V": "be",
+    "ARG0": "the bank of the river",
+    "ARG1": "a popular spot for fishing"
+    }
+    },
+    {
+    "sentence": "I need to book a reservation at the hotel.",
+    "synonym_sentence": "I need to make a reservation at the hotel.",
+    "propbank_golden_labels": {
+    "Sentence": {
+    "V": "book",
+    "ARG0": "I",
+    "ARG1": "a reservation",
+    "ARG2": "at the hotel"
+    },
+    "SynonymSentence": {
+    "V": "make",
+    "ARG0": "I",
+    "ARG1": "a reservation",
+    "ARG2": "at the hotel"
+    }
+    }
+    },
+    {
+    "sentence": "The word 'apple' can refer to a fruit or a technology company.",
+    "propbank_golden_labels": {
+    "V": "refer",
+    "ARG0": "The word 'apple'",
+    "ARG1": "to a fruit or a technology company"
+    }
+    },
+    {
+    "sentence": "The book discusses the life of the famous actress.",
+    "propbank_golden_labels": {
+    "V": "discuss",
+    "ARG0": "The book",
+    "ARG1": "the life of the famous actress"
+    }
+    },
+    {
+    "sentence": "The children played by the bank of the river.",
+    "propbank_golden_labels": {
+    "V": "play",
+    "ARG0": "The children",
+    "ARGM_LOC": "by the bank of the river"
+    }
+    },
+    {
+    "sentence": "The doctor prescribed the medicine to the patient.",
+    "propbank_golden_labels": {
+    "V": "prescribe",
+    "ARG0": "The doctor",
+    "ARG1": "the medicine",
+    "ARG2": "to the patient"
+    }
+    },
+    {
+    "sentence": "The teacher graded the students' tests.",
+    "propbank_golden_labels": {
+    "V": "grade",
+    "ARG0": "The teacher",
+    "ARG1": "the students' tests"
+    }
+    },
+    {
+    "sentence": "The chef chopped the vegetables for the soup.",
+    "propbank_golden_labels": {
+    "V": "chop",
+    "ARG0": "The chef",
+    "ARG1": "the vegetables",
+    "ARG2": "for the soup"
+    }
+    },
+    {
+        "sentence": "The bank issued a new loan.",
+        "propbank_golden_labels": {
+        "V": "issue",
+        "ARG0": "the bank",
+        "ARG1": "a new loan"
+        }
+        },
+        {
+        "sentence": "She left the book on the bank of the river.",
+        "propbank_golden_labels": {
+        "V": "leave",
+        "ARG0": "she",
+        "ARG1": "the book",
+        "ARGM_LOC": "on the bank of the river"
+        }
+        },
+        {
+        "sentence": "The man went to the bank to deposit his paycheck.",
+        "propbank_golden_labels": {
+        "V": "go",
+        "ARG0": "the man",
+        "ARG1": "to the bank",
+        "ARG2": "to deposit his paycheck"
+        }
+        },
+        {
+        "sentence": "The band played their latest song at the bank of the river.",
+        "propbank_golden_labels": {
+        "V": "play",
+        "ARG0": "the band",
+        "ARG1": "their latest song",
+        "ARGM_LOC": "at the bank of the river"
+        }
+        }
+    ]
+}

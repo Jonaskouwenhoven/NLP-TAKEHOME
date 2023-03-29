@@ -1,0 +1,76 @@
+{
+    "test_type": "Verb Alternations/Levin's classes",
+    "test_category": "Directional Expectation tests (DIRs)",
+    "tests": [
+        {
+            "sentence": "The teacher assigned the students a quiz.",
+            "propbank_golden_labels": {
+                "V": "assign",
+                "ARG0": "the teacher",
+                "ARG1": "the students",
+                "ARG2": "a quiz"
+            }
+        },
+        {
+            "sentence": "The students were assigned a quiz by the teacher.",
+            "propbank_golden_labels": {
+                "V": "assign",
+                "ARG0": "the teacher",
+                "ARG1": "the students",
+                "ARG2": "a quiz"
+            }
+        },
+        {
+            "sentence": "The burglar broke into the house.",
+            "propbank_golden_labels": {
+                "V": "break",
+                "ARG0": "the burglar",
+                "ARG1": "into the house"
+            }
+        },
+        {
+            "sentence": "The house was broken into by the burglar.",
+            "propbank_golden_labels": {
+                "V": "break",
+                "ARG0": "the burglar",
+                "ARG1": "into the house"
+            }
+        },
+        {
+            "sentence": "The chef chopped the vegetables finely.",
+            "propbank_golden_labels": {
+                "V": "chop",
+                "ARG0": "the chef",
+                "ARG1": "the vegetables",
+                "ARGM_MNR": "finely"
+            }
+        },
+        {
+            "sentence": "The vegetables were chopped finely by the chef.",
+            "propbank_golden_labels": {
+                "V": "chop",
+                "ARG0": "the chef",
+                "ARG1": "the vegetables",
+                "ARGM_MNR": "finely"
+            }
+        },
+        {
+            "sentence": "The baby drank the milk from the bottle.",
+            "propbank_golden_labels": {
+                "V": "drink",
+                "ARG0": "the baby",
+                "ARG1": "the milk",
+                "ARGM_LOC": "from the bottle"
+            }
+        },
+        {
+            "sentence": "The milk was drunk from the bottle by the baby.",
+            "propbank_golden_labels": {
+                "V": "drink",
+                "ARG0": "the baby",
+                "ARG1": "the milk",
+                "ARGM_LOC": "from the bottle"
+            }
+        }
+    ]
+}

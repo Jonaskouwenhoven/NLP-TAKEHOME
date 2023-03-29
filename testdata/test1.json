@@ -1,0 +1,211 @@
+{
+    "test_type": "One Proposition -> Multiple Realizations",
+    "test_category": "Directional Expectation",
+
+    "tests":[
+    {
+    "proposition": "The cat is chasing the dog.",
+    "realizations": [
+        {
+            "realization": "The cat is pursuing the dog.",
+            "propbank_golden_labels": {
+                "ARG0": "The cat",
+                "V": "pursuing",
+                "ARG1": "the dog"
+            }
+        },
+        {
+            "realization": "The dog is being chased by the cat.",
+            "propbank_golden_labels": {
+                "ARG1": "The dog",
+                "V": "chased",
+                "ARG0": "by the cat"
+            }
+        }
+    ]
+    },
+    {
+
+        "proposition": "Louis is watering the plants in his garden.",
+        "realizations": [
+            {
+                "realization": "Louis is nurturing his garden by watering the plants.",
+                "propbank_golden_labels": {
+                    "ARG0": "Louis",
+                    "V": "nurturing",
+                    "ARG1": "his garden",
+                    "ARGM_MNR": "by watering the plants"
+                }
+            },
+            {
+                "realization": "The plants in Louis's garden are being watered by him.",
+                "propbank_golden_labels": {
+                    "ARG1": "The plants in Louis's garden",
+                    "V": "watered",
+                    "ARG0": "by him"
+                }
+            },
+            {
+                "realization": "Louis is hydrating the plants in his garden.",
+                "propbank_golden_labels": {
+                    "ARG0": "Louis",
+                    "V": "hydrating",
+                    "ARG1": "the plants in his garden"
+                }
+            }
+        ]
+
+    }, 
+        {
+            "proposition": "The chef is cooking the soup.",
+            "realizations": [
+                {
+                    "realization": "The soup is being cooked by the chef.",
+                    "propbank_golden_labels": {
+                        "ARG1": "the soup",
+                        "V": "cooked",
+                        "ARG0": "by the chef"
+                    }
+                },
+                {
+                    "realization": "The chef is preparing the soup.",
+                    "propbank_golden_labels": {
+                        "ARG0": "The chef",
+                        "V": "preparing",
+                        "ARG1": "the soup"
+                    }
+                },
+                {
+                    "realization": "The soup is being made by the chef.",
+                    "propbank_golden_labels": {
+                        "ARG1": "the soup",
+                        "V": "made",
+                        "ARG0": "by the chef"
+                    }
+                }
+            ]
+        },
+        {
+            "proposition": "The baby is sleeping in the crib.",
+            "realizations": [
+                {
+                    "realization": "The infant is snoozing in the cradle.",
+                    "propbank_golden_labels": {
+                        "ARG0": "The infant",
+                        "V": "snoozing",
+                        "ARGM_LOC": "in the cradle"
+                    }
+                },
+                {
+                    "realization": "The crib is holding the sleeping baby.",
+                    "propbank_golden_labels": {
+                        "ARG1": "The sleeping baby",
+                        "V": "holding",
+                        "ARG0": "the crib"
+                    }
+                },
+                {
+                    "realization": "The baby is napping in the crib.",
+                    "propbank_golden_labels": {
+                        "ARG0": "The baby",
+                        "V": "napping",
+                        "ARGM_LOC": "in the crib"
+                    }
+                }
+            ]
+        },
+        {
+            "proposition": "The student is working on his take home exam.",
+            "realizations": [
+                {
+                    "realization": "The student is completing his take-home exam.",
+                    "propbank_golden_labels": {
+                        "ARG0": "The student",
+                        "V": "completing",
+                        "ARG1": "his take-home exam"
+                    }
+                },
+                {
+                    "realization": "The take-home exam is being worked on by the student.",
+                    "propbank_golden_labels": {
+                        "ARG1": "His take-home exam",
+                        "V": "worked",
+                        "ARG0": "by the student"
+                    }
+                },
+                {
+                    "realization": "The student is tackling his take-home exam.",
+                    "propbank_golden_labels": {
+                        "ARG0": "The student",
+                        "V": "tackling",
+                        "ARG1": "his take-home exam"
+                    }
+                }
+            ]
+        },
+        {
+            "proposition": "The professor explained the concept with ease.",
+            "realizations": [
+                {
+                    "realization": "The concept was easily explained by the professor.",
+                    "propbank_golden_labels": {
+                        "ARG1": "The concept",
+                        "ARGM_MNR":"easily",
+                        "V": "explained",
+                        "ARG0": "by the professor"
+                    }
+                },
+                {
+                    "realization": "The professor expounded on the concept effortlessly.",
+                    "propbank_golden_labels": {
+                        "ARG0": "The professor",
+                        "V": "expounded",
+                        "ARG1": "the concept",
+                        "ARGM_MNR": "effortlessly"
+                    }
+                },
+                {
+                    "realization": "With ease, the professor conveyed the concept.",
+                    "propbank_golden_labels": {
+                        "ARG0": "The professor",
+                        "V": "conveyed",
+                        "ARG1": "the concept",
+                        "ARGM_MNR": "with ease"
+                    }
+                }
+            ]
+        },
+        {
+            "proposition": "The girl had a hard time eating her brussel sprouts.",
+            "realizations": [
+                {
+                    "realization": "Eating her brussel sprouts was a struggle for the girl.",
+                    "propbank_golden_labels": {
+                        "ARG0": "a struggle for The girl",
+                        "V": "was",
+                        "ARG1": "eating her brussel sprouts"
+                    }
+                },
+                {
+                    "realization": "The girl found it difficult to eat her brussel sprouts.",
+                    "propbank_golden_labels": {
+                        "ARG0": "The girl",
+                        "V": "found",
+                        "ARG1": "it difficult to eat her brussel sprouts"
+                    }
+                },
+                {
+                    "realization": "Her brussel sprouts were a challenge for the girl to eat.",
+                    "propbank_golden_labels": {
+                        "ARG1": "Her brussel sprouts",
+                        "V": "were",
+                        "ARG0": "a challenge for the girl to eat"
+                    }
+                }
+            ]
+        }
+        
+        
+
+    ]
+}

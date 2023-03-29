@@ -1,0 +1,118 @@
+{
+    "tests": [
+        {
+            "test_name": "One Proposition → Multiple Realizations - Basic",
+            "description": "Test the SRL system's ability to identify the semantic roles of arguments in different surface realizations of the same proposition with basic sentence structures and vocabulary.",
+            "inputs": [
+                {"sentence": "The cat chased the mouse."},
+                {"sentence": "The mouse was chased by the cat."},
+                {"sentence": "A mouse was chased by a cat."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "cat"}, {"role": "ARG1", "entity": "mouse"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "mouse"}, {"role": "ARG0", "entity": "cat"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "mouse"}, {"role": "ARG0", "entity": "cat"}]}
+            ]
+        },
+        {
+            "test_name": "One Proposition → Multiple Realizations - Ambiguity",
+            "description": "Test the SRL system's ability to identify the correct semantic roles of arguments in different surface realizations of an ambiguous proposition.",
+            "inputs": [
+                {"sentence": "The student gave the teacher an apple."},
+                {"sentence": "The student gave an apple to the teacher."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "student"}, {"role": "ARG1", "entity": "teacher"}, {"role": "ARG2", "entity": "apple"}]},
+                {"semantic_roles": [{"role": "ARG0", "entity": "student"}, {"role": "ARG2", "entity": "apple"}, {"role": "ARG1", "entity": "teacher"}]}
+            ]
+        },
+        {
+            "test_name": "One Proposition → Multiple Realizations - Complex",
+            "description": "Test the SRL system's ability to identify the semantic roles of arguments in different surface realizations of the same proposition with complex sentence structures and vocabulary.",
+            "inputs": [
+                {"sentence": "The police arrested the suspect at the scene of the crime."},
+                {"sentence": "At the scene of the crime, the suspect was arrested by the police."},
+                {"sentence": "The suspect was apprehended by law enforcement officers at the location where the crime occurred."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "police"}, {"role": "ARG1", "entity": "suspect"}, {"role": "ARGM-LOC", "entity": "scene of the crime"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "suspect"}, {"role": "ARG0", "entity": "police"}, {"role": "ARGM-LOC", "entity": "scene of the crime"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "suspect"}, {"role": "ARG0", "entity": "law enforcement officers"}, {"role": "ARGM-LOC", "entity": "location where the crime occurred"}]}
+            ]
+        },
+        {
+            "test_name": "One Proposition → Multiple Realizations - Additional Examples",
+            "description": "Additional examples for testing the SRL system's ability to identify the semantic roles of arguments in different surface realizations of the same proposition.",
+            "inputs": [
+                {"sentence": "The chef cooked the steak."},
+                {"sentence": "The steak was cooked by the chef."},
+                {"sentence": "A delicious steak was cooked by the talented chef."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "chef"}, {"role": "ARG1", "entity": "steak"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "steak"}, {"role": "ARG0", "entity": "chef"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "steak"}, {"role": "ARG0", "entity": "chef"}]}
+            ]
+            },
+            {
+            "test_name": "One Proposition → Multiple Realizations - Additional Examples",
+            "description": "Additional examples for testing the SRL system's ability to identify the semantic roles of arguments in different surface realizations of the same proposition.",
+            "inputs": [
+                {"sentence": "The dog chased the cat."},
+                {"sentence": "The cat was chased by the dog."},
+                {"sentence": "A fast dog chased a small cat."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "dog"}, {"role": "ARG1", "entity": "cat"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "cat"}, {"role": "ARG0", "entity": "dog"}]},
+                {"semantic_roles": [{"role": "ARG0", "entity": "dog"}, {"role": "ARG1", "entity": "cat"}]}
+            ]
+            },
+            {
+            "test_name": "One Proposition → Multiple Realizations - Additional Examples",
+            "description": "Additional examples for testing the SRL system's ability to identify the semantic roles of arguments in different surface realizations of the same proposition.",
+            "inputs": [
+                {"sentence": "The singer performed the song."},
+                {"sentence": "The song was performed by the singer."},
+                {"sentence": "A beautiful song was performed by a talented singer."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "singer"}, {"role": "ARG1", "entity": "song"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "song"}, {"role": "ARG0", "entity": "singer"}]},
+                {"semantic_roles": [{"role": "ARG1", "entity": "song"}, {"role": "ARG0", "entity": "singer"}]}
+            ]
+            },
+            {
+                "test_name": "One Proposition → Multiple Realizations",
+                "description": "Test the SRL system's ability to identify the semantic roles of arguments in different surface realizations of the same proposition.",
+                "inputs": [
+                  {"sentence": "The student answered the question."},
+                  {"sentence": "The question was answered by the student."},
+                  {"sentence": "A difficult question was answered by a bright student."}
+                ],
+                "expected_output": [
+                  {"semantic_roles": [{"role": "ARG0", "entity": "student"}, {"role": "ARG1", "entity": "question"}]},
+                  {"semantic_roles": [{"role": "ARG1", "entity": "question"}, {"role": "ARG0", "entity": "student"}]},
+                  {"semantic_roles": [{"role": "ARG1", "entity": "question"}, {"role": "ARG0", "entity": "student"}]}
+                ]
+              },
+              {
+                "test_name": "One Proposition → Multiple Realizations - Additional Examples",
+                "description": "Additional examples for testing the SRL system's ability to identify the semantic roles of arguments in different surface realizations of the same proposition.",
+                "inputs": [
+                    {"sentence": "The company hired the new employee."},
+                    {"sentence": "The new employee was hired by the company."},
+                    {"sentence": "A talented new employee was hired by a reputable company."}
+                ],
+                "expected_output": [
+                    {"semantic_roles": [{"role": "ARG0", "entity": "company"}, {"role": "ARG1", "entity": "new employee"}]},
+                    {"semantic_roles": [{"role": "ARG1", "entity": "new employee"}, {"role": "ARG0", "entity": "company"}]},
+                    {"semantic_roles": [{"role": "ARG1", "entity": "new employee"}, {"role": "ARG0", "entity": "reputable company"}]}
+                ]
+            }
+            
+              
+            
+        
+    ]
+}

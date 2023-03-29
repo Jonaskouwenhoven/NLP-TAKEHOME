@@ -1,0 +1,55 @@
+{
+    "tests": [
+        {
+            "test_name": "Clefts - It-Cleft",
+            "description": "Test the SRL system's ability to handle It-cleft constructions.",
+            "inputs": [
+                {"sentence": "It was the dog that ate my homework."},
+                {"sentence": "It was my homework that the dog ate."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "dog"}, {"role": "ARG1", "entity": "my homework"}]},
+                {"semantic_roles": [{"role": "ARG0", "entity": "dog"}, {"role": "ARG1", "entity": "my homework"}]}
+            ]
+        },
+        
+        {
+            "test_name": "Clefts - Wh-Cleft",
+            "description": "Test the SRL system's ability to handle Wh-cleft constructions.",
+            "inputs": [
+                {"sentence": "What I want is a cup of coffee."},
+                {"sentence": "What a cup of coffee is what I want."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "I"}, {"role": "ARG1", "entity": "cup of coffee"}]},
+                {"semantic_roles": [{"role": "ARG0", "entity": "I"}, {"role": "ARG1", "entity": "cup of coffee"}]}
+            ]
+        },
+        
+        {
+            "test_name": "Clefts - Wh-Cleft with Prepositional Phrase",
+            "description": "Test the SRL system's ability to handle Wh-cleft constructions with a prepositional phrase.",
+            "inputs": [
+                {"sentence": "What she needs is a break from work."},
+                {"sentence": "What a break from work is what she needs."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "she"}, {"role": "ARG1", "entity": "a break from work"}]},
+                {"semantic_roles": [{"role": "ARG0", "entity": "she"}, {"role": "ARG1", "entity": "a break from work"}]}
+            ]
+        },
+        
+        {
+            "test_name": "Clefts - Wh-Cleft with Adjective Phrase",
+            "description": "Test the SRL system's ability to handle Wh-cleft constructions with an adjective phrase.",
+            "inputs": [
+                {"sentence": "What I find annoying is people who don't clean up after themselves."},
+                {"sentence": "People who don't clean up after themselves is what I find annoying."}
+            ],
+            "expected_output": [
+                {"semantic_roles": [{"role": "ARG0", "entity": "I"}, {"role": "ARG1", "entity": "people who don't clean up after themselves"}]},
+                {"semantic_roles": [{"role": "ARG0", "entity": "I"}, {"role": "ARG1", "entity": "people who don't clean up after themselves"}]}
+            ]
+        }
+    ]
+}
