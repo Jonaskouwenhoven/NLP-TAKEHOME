@@ -87,7 +87,7 @@
                     "Passive": {
                         "V": "painted",
                         "ARG1": "a beautiful landscape",
-                        "ARGM0": "by the artist"
+                        "ARG0": "by the artist"
                     }
                 }
             ]

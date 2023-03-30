@@ -27,16 +27,16 @@ def predict_total(sentence):
         _, pred = predict_group9.predictions([splited_sentence], [labels])
         sentence, prediction, token = pred[0]
         prediction = prediction[1:-1]
-        print(prediction, token)
+        # print(prediction, token)
 
-        print("")
+        # print("")
         # remove begin token and and token from prediction\
         # prediction
         prediction_new = [value for token, value in zip(token, prediction) if not token.startswith("##")]
 
 
-        print(len(sentence), len(prediction_new))
-        print(sentence, prediction_new)
+        # print(len(sentence), len(prediction_new))
+        # print(sentence, prediction_new)
         return sentence, prediction_new
 
 

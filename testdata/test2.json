@@ -13,9 +13,9 @@
                         "ARG1": "the dog"
                     },
                     "Question": {
-                        "V": "Is be chased",
-                        "ARG0": "the dog",
-                        "ARG1": "by the cat"
+                        "V": "chased",
+                        "ARG1": "the dog",
+                        "ARG0": "by the cat"
                     }
                 }
             ]
@@ -98,7 +98,7 @@
             "propbank_golden_labels": [
                 {
                     "Statement": {
-                        "V": "is pursuing",
+                        "V": "pursuing",
                         "ARG0": "the cat",
                         "ARG1": "the dog"
                     },
@@ -116,13 +116,13 @@
             "propbank_golden_labels": [
                 {
                     "Statement": {
-                        "V": "was explained",
+                        "V": "explained",
                         "ARG0": "by the professor",
                         "ARG1": "the concept",
                         "ARGM_MNR": "easily"
                     },
                     "Question": {
-                        "V": "Was explained",
+                        "V": "explained",
                         "ARG1": "the concept",
                         "ARGM_MNR": "easily",
                         "ARG0": "by the professor"
