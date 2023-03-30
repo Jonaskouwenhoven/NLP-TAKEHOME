@@ -7,12 +7,12 @@
             "synonym_sentence": "The cat consumed the fish.",
             "propbank_golden_labels": { 
                 "Sentence": {
-                "V": "eat",
+                "V": "ate",
                 "ARG0": "the cat",
                 "ARG1": "the fish"
                 },
                 "SynonymSentence": {
-                "V": "consume",
+                "V": "consumed",
                 "ARG0": "the cat",
                 "ARG1": "the fish"
                 }
@@ -24,12 +24,12 @@
             "synonym_sentence": "The professor instructed the students.",
             "propbank_golden_labels": {
                 "Sentence": {
-                    "V": "teach",
+                    "V": "taught",
                     "ARG0": "the professor",
                     "ARG1": "the students"
                 },
                 "SynonymSentence": {
-                    "V": "instruct",
+                    "V": "instructed",
                     "ARG0": "the professor",
                     "ARG1": "the students"
                 }
@@ -40,12 +40,12 @@
             "synonym_sentence": "The athlete completed the marathon.",
             "propbank_golden_labels": {
                 "Sentence": {
-                    "V": "run",
+                    "V": "ran",
                     "ARG0": "the athlete",
                     "ARG1": "the marathon"
                 },
                 "SynonymSentence": {
-                    "V": "complete",
+                    "V": "completed",
                     "ARG0": "the athlete",
                     "ARG1": "the marathon"
                 }
@@ -56,12 +56,12 @@
             "synonym_sentence": "The company produces cars.",
             "propbank_golden_labels": {
                 "Sentence": {
-                    "V": "manufacture",
+                    "V": "manufactures",
                     "ARG0": "the company",
                     "ARG1": "cars"
                 },
                 "SynonymSentence": {
-                    "V": "produce",
+                    "V": "produces",
                     "ARG0": "the company",
                     "ARG1": "cars"
                 }
@@ -72,12 +72,12 @@
             "synonym_sentence": "The company recruited the new employee.",
             "propbank_golden_labels": {
                 "Sentence": {
-                    "V": "hire",
+                    "V": "hired",
                     "ARG0": "the company",
                     "ARG1": "the new employee"
                 },
                 "SynonymSentence": {
-                    "V": "recruit",
+                    "V": "recruited",
                     "ARG0": "the company",
                     "ARG1": "the new employee"
                 }
@@ -88,12 +88,12 @@
             "synonym_sentence": "The car collided with the tree.",
             "propbank_golden_labels": {
                 "Sentence": {
-                    "V": "crash",
+                    "V": "crashed",
                     "ARG0": "the car",
                     "ARG1": "the tree"
                 },
                 "SynonymSentence": {
-                    "V": "collide",
+                    "V": "collided",
                     "ARG0": "the car",
                     "ARG1": "the tree"
                 }
@@ -104,12 +104,12 @@
             "synonym_sentence": "The student finished the homework.",
             "propbank_golden_labels": { 
                 "Sentence": {
-                    "V": "complete",
+                    "V": "completed",
                     "ARG0": "the student",
                     "ARG1": "the homework"
                 },
                 "SynonymSentence": {
-                    "V": "finish",
+                    "V": "finished",
                     "ARG0": "the student",
                     "ARG1": "the homework"
                 }
@@ -120,12 +120,12 @@
             "synonym_sentence": "The chef cooked the meal.",
             "propbank_golden_labels": { 
                 "Sentence": {
-                    "V": "prepare",
+                    "V": "prepared",
                     "ARG0": "the chef",
                     "ARG1": "the meal"
                 },
                 "SynonymSentence": {
-                    "V": "cook",
+                    "V": "cooked",
                     "ARG0": "the chef",
                     "ARG1": "the meal"
                 }
@@ -136,12 +136,12 @@
             "synonym_sentence": "The president gave a speech.",
             "propbank_golden_labels": { 
                 "Sentence": {
-                    "V": "hold",
+                    "V": "held",
                     "ARG0": "the president",
                     "ARG1": "a speech"
                 },
                 "SynonymSentence": {
-                    "V": "give",
+                    "V": "gave",
                     "ARG0": "the president",
                     "ARG1": "a speech"
                 }

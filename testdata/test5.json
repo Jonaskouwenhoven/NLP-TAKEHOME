@@ -3,74 +3,141 @@
     "test_category": "Directional Expectation tests (DIRs)",
     "tests": [
         {
-            "sentence": "The teacher assigned the students a quiz.",
+            "causative": "The chef cooked the food.",
+            "inchoative": "The food cooked.",
             "propbank_golden_labels": {
-                "V": "assign",
-                "ARG0": "the teacher",
-                "ARG1": "the students",
-                "ARG2": "a quiz"
+                "causative": {
+                    "V": "cooked",
+                    "ARG0": "The chef",
+                    "ARG1": "the food"
+                },
+                "inchoative": {
+                    "V": "cooked",
+                    "ARG1": "the food"
+                }
             }
         },
         {
-            "sentence": "The students were assigned a quiz by the teacher.",
+            "causative": "The gardener watered the plants.",
+            "inchoative": "The plants watered.",
             "propbank_golden_labels": {
-                "V": "assign",
-                "ARG0": "the teacher",
-                "ARG1": "the students",
-                "ARG2": "a quiz"
+                "causative": {
+                    "V": "watered",
+                    "ARG0": "The gardener",
+                    "ARG1": "the plants"
+                },
+                "inchoative": {
+                    "V": "watered",
+                    "ARG1": "the plants"
+                }
             }
         },
         {
-            "sentence": "The burglar broke into the house.",
+            "causative": "The musician played the song.",
+            "inchoative": "The song played.",
             "propbank_golden_labels": {
-                "V": "break",
-                "ARG0": "the burglar",
-                "ARG1": "into the house"
+                "causative": {
+                    "V": "played",
+                    "ARG0": "The musician",
+                    "ARG1": "the song"
+                },
+                "inchoative": {
+                    "V": "played",
+                    "ARG1": "the song"
+                }
             }
         },
         {
-            "sentence": "The house was broken into by the burglar.",
+            "causative": "The wind blew the leaves.",
+            "inchoative": "The leaves blew.",
             "propbank_golden_labels": {
-                "V": "break",
-                "ARG0": "the burglar",
-                "ARG1": "into the house"
+                "causative": {
+                    "V": "blew",
+                    "ARG0": "The wind",
+                    "ARG1": "the leaves"
+                },
+                "inchoative": {
+                    "V": "blew",
+                    "ARG1": "the leaves"
+                }
             }
         },
         {
-            "sentence": "The chef chopped the vegetables finely.",
+            "causative": "The teacher taught the class.",
+            "inchoative": "The class learned.",
             "propbank_golden_labels": {
-                "V": "chop",
-                "ARG0": "the chef",
-                "ARG1": "the vegetables",
-                "ARGM_MNR": "finely"
+                "causative": {
+                    "V": "taught",
+                    "ARG0": "The teacher",
+                    "ARG1": "the class"
+                },
+                "inchoative": {
+                    "V": "learned",
+                    "ARG1": "the class"
+                }
             }
         },
         {
-            "sentence": "The vegetables were chopped finely by the chef.",
+            "causative": "The mother opened the window.",
+            "inchoative": "The window opened.",
             "propbank_golden_labels": {
-                "V": "chop",
-                "ARG0": "the chef",
-                "ARG1": "the vegetables",
-                "ARGM_MNR": "finely"
+                "causative": {
+                    "V": "opened",
+                    "ARG0": "the mother",
+                    "ARG1": "the window"
+                },
+                "inchoative": {
+                    "V": "opened",
+                    "ARG1": "the window"
+                }
             }
         },
         {
-            "sentence": "The baby drank the milk from the bottle.",
+            "causative": "The sun melted the ice.",
+            "inchoative": "The ice melted.",
             "propbank_golden_labels": {
-                "V": "drink",
-                "ARG0": "the baby",
-                "ARG1": "the milk",
-                "ARGM_LOC": "from the bottle"
+                "causative": {
+                    "V": "melted",
+                    "ARG0": "the sun",
+                    "ARG1": "the ice"
+                },
+                "inchoative": {
+                    "V": "melted",
+                    "ARG1": "the ice"
+                }
             }
         },
         {
-            "sentence": "The milk was drunk from the bottle by the baby.",
+            "causative": "The artist painted the picture.",
+            "inchoative": "The picture painted.",
             "propbank_golden_labels": {
-                "V": "drink",
-                "ARG0": "the baby",
-                "ARG1": "the milk",
-                "ARGM_LOC": "from the bottle"
+                "causative": {
+                    "V": "painted",
+                    "ARG0": "The artist",
+                    "ARG1": "the picture"
+                },
+                "inchoative": {
+                    "V": "painted",
+                    "ARG1": "the picture"
+                }
+            }
+        },
+        {
+            "causative": "The mother washed the baby.",
+            "inchoative": "The baby washed.",
+            "propbank_golden_labels": {
+                "causative": {
+                    "V": "washed",
+                    "ARG0": "The mother",
+                    "ARG1": "the baby"
+                },
+                "inchoative": {
+                    "V": "washed",
+                    "ARG1": "the baby"
+                }
             }
         }
+
+
     ]
 }
