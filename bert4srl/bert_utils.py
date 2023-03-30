@@ -273,6 +273,7 @@ def evaluate_bert_model(eval_dataloader: DataLoader, eval_batch_size: int, model
     gold_label_list = [[] for _ in range(gold_label_ids.shape[0])]
     pred_label_list = [[] for _ in range(gold_label_ids.shape[0])]
     full_word_preds = []
+
     label_map = {int(value): key for key, value in label_map.items()}
 
     for seq_ix in range(gold_label_ids.shape[0]):
@@ -286,7 +287,7 @@ def evaluate_bert_model(eval_dataloader: DataLoader, eval_batch_size: int, model
             full_words, _ = wordpieces_to_tokens(wordpieces, labelpieces=None)
             full_preds = pred_label_list[seq_ix]
             full_gold = gold_label_list[seq_ix]
-            full_word_preds.append((full_words, full_preds))
+            full_word_preds.append((full_words, full_preds, wordpieces))
             # print(f"\n----- {seq_ix+1} -----\n{full_words}\n\nGOLD: {full_gold}\nPRED:{full_preds}\n")
 
     results = {
