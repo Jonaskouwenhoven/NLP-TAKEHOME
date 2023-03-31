@@ -1,8 +1,6 @@
-# Advanced NLP - Take Home Exam
+# Advanced NLP - Exam
 
-This repository contains the code and data for the Advanced NLP Take Home Exam: Creating a challenge dataset for SRL systems
-
-
+This repository contains the code and data for the ANLP Exam: Creating a challenge dataset for SRL systems
 
 ## Installation
 
