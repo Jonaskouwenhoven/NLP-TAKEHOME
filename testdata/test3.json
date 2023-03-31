@@ -1,6 +1,6 @@
 {
     "test_type": "Active vs. Passive",
-    "test_category": "Invariance tests (INVs)",
+    "test_category": "INV",
     "tests": [
         {
             "active": "The chef cooked the meal.",

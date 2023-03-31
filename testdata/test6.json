@@ -1,6 +1,6 @@
 {
     "test_type": "Synonyms",
-    "test_category": "Minimum Functionality tests (MFTs)",
+    "test_category": "MFT",
     "tests": [
         {
             "sentence": "The cat ate the fish.",

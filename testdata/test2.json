@@ -1,6 +1,6 @@
 {
     "test_type": "Statement vs. Question",
-    "test_category": "Invariance tests (INVs)",
+    "test_category": "INV",
     "tests": [
         {
             "statement": "The dog is being chased by the cat.",

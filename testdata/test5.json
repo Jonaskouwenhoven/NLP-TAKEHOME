@@ -1,6 +1,6 @@
 {
     "test_type": "Verb Alternations/Levin's classes",
-    "test_category": "Directional Expectation tests (DIRs)",
+    "test_category": "DIR",
     "tests": [
         {
             "causative": "The chef cooked the food.",

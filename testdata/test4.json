@@ -1,6 +1,6 @@
 {
     "test_type": "Clefts",
-    "test_category": "Directional Expectation tests (DIRs)",
+    "test_category": "DIR",
     "tests": [
         {
             "sentence": "It was the teacher who gave the students a quiz yesterday.",

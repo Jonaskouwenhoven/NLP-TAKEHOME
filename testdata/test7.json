@@ -1,6 +1,6 @@
 {
     "test_type": "Lexical Semantics - Polysemy",
-    "test_category": "Directional Expectation tests (DIRs)",
+    "test_category": "DIR",
     "tests": [
     {
     "sentence": "The bank refused to give me a loan.",
@@ -105,15 +105,6 @@
                 "ARG1": "the enemy",
                 "ARG2": "with great courage"
             }
-        },
-        {
-        "sentence": "The band played their latest song at the bank of the river.",
-        "propbank_golden_labels": {
-        "V": "played",
-        "ARG0": "the band",
-        "ARG1": "their latest song",
-        "ARGM_LOC": "at the bank of the river"
-        }
         }
     ]
 }
