@@ -22,8 +22,12 @@ def predictions(data, label):
     PAD_TOKEN_LABEL_ID = CrossEntropyLoss().ignore_index # -100
 
     model_path = "bert4srl/saved_models/test/EPOCH_8"
+    try:
+        model, tokenizer = util.load_model(BertForTokenClassification, BertTokenizer, model_path)
 
-    model, tokenizer = util.load_model(BertForTokenClassification, BertTokenizer, model_path)
+    except:
+        print("Model not found, please download the model from the google drive link in the README.md file, or ron the MAin_only_Allen.py file")
+        exit()
     index2label = util.load_label_dict(f"bert4srl/label2index.json")
     label2index = {v:k for k,v in index2label.items()}
     # data, label = return_sentences()

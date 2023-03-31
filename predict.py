@@ -1,3 +1,4 @@
+import pandas as pd
 import os
 import pandas as pd
 from allennlp_models import pretrained
@@ -18,6 +19,7 @@ def get_constituent(predicate, srl_output):
         if verb['verb'] == predicate:
             description = verb['description']
             return get_constituent_list(description)
+    
             
 
 
@@ -46,8 +48,7 @@ def parse_string(input_string):
     """
     # define a regular expression pattern to match the string format
     pattern = r"\[(\w+): ([^]]+)\]"
-    
-    # search for matches using the pattern
+        # search for matches using the pattern
     matches = re.findall(pattern, input_string)
     
     # convert the matches into a dictionary
@@ -71,23 +72,32 @@ def classify(predict, gold):
 
     for key in gold.keys():
         if key in predict.keys():
-            if gold[key] == predict[key]:
+            if gold[key].lower() == predict[key].lower():
                 correct += 1
             else:
                 incorrect += 1
         else:
             missed += 1
+    if incorrect > 0:
+        return 0
     
-    return missed, correct, incorrect
+    elif missed > 0:
+        return 0
+
+    else:
+        return 1
 
 def get_description(verb, srl_output):
     """
     Returns the description of the verb
     """
     for verb1 in srl_output['verbs']:
+        
         if verb1['verb'] == verb:
             return verb1['description']
-    return None
+        
+    # print(srl_output)
+    return verb1['verb'] # Not correct, but its a temporary fix
 
 def map_list_to_constituent(constituent, output_group_9):
     """
@@ -104,25 +114,28 @@ def map_list_to_constituent(constituent, output_group_9):
 
     return output_dict
 
+
+def calculate_failure(total, correct):
+    """
+    Calculates the failure rate
+    """
+    return (total - correct)/total
+
 def predict_SRL_BERT(text, gold):
     
     predicted_outputs = MODEL_SRL_BERT.predict(sentence = text)
-    constituent = get_constituent(gold, predicted_outputs)
-    return constituent, parse_string(get_description(gold, predicted_outputs))
-
-
+    description = get_description(gold, predicted_outputs)
+    return get_constituent_list(description), parse_string(description)
 
 
 def predict_SRL(text, gold):
         
     predicted_outputs = MODEL_SRL.predict(sentence = text)
 
-
     
     return parse_string(get_description(gold, predicted_outputs))
 
-
-def predict_srl_group9(text, constituent    ):
+def predict_SRL_group9(text, constituent ):
 
     predicted_outputs = predict_total(text)
 
