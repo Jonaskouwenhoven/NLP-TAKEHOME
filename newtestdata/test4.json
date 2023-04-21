@@ -1,0 +1,152 @@
+{
+    "test_type": "Synonyms",
+    "test_category": "MFT",
+    "tests": [
+        {
+            "sentence": "The cat ate the fish.",
+            "synonym_sentence": "The cat consumed the fish.",
+            "propbank_golden_labels": { 
+                "Sentence": {
+                "V": "ate",
+                "ARG0": "the cat",
+                "ARG1": "the fish"
+                },
+                "SynonymSentence": {
+                "V": "consumed",
+                "ARG0": "the cat",
+                "ARG1": "the fish"
+                }
+
+            }
+        },
+        {
+            "sentence": "The professor taught the students.",
+            "synonym_sentence": "The professor instructed the students.",
+            "propbank_golden_labels": {
+                "Sentence": {
+                    "V": "taught",
+                    "ARG0": "the professor",
+                    "ARG1": "the students"
+                },
+                "SynonymSentence": {
+                    "V": "instructed",
+                    "ARG0": "the professor",
+                    "ARG1": "the students"
+                }
+            }
+        },
+        {
+            "sentence": "The athlete ran the marathon.",
+            "synonym_sentence": "The athlete completed the marathon.",
+            "propbank_golden_labels": {
+                "Sentence": {
+                    "V": "ran",
+                    "ARG0": "the athlete",
+                    "ARG1": "the marathon"
+                },
+                "SynonymSentence": {
+                    "V": "completed",
+                    "ARG0": "the athlete",
+                    "ARG1": "the marathon"
+                }
+            }
+        },
+        {
+            "sentence": "The company manufactures cars.",
+            "synonym_sentence": "The company produces cars.",
+            "propbank_golden_labels": {
+                "Sentence": {
+                    "V": "manufactures",
+                    "ARG0": "the company",
+                    "ARG1": "cars"
+                },
+                "SynonymSentence": {
+                    "V": "produces",
+                    "ARG0": "the company",
+                    "ARG1": "cars"
+                }
+            }
+        },
+        {
+            "sentence": "The company hired the new employee.",
+            "synonym_sentence": "The company recruited the new employee.",
+            "propbank_golden_labels": {
+                "Sentence": {
+                    "V": "hired",
+                    "ARG0": "the company",
+                    "ARG1": "the new employee"
+                },
+                "SynonymSentence": {
+                    "V": "recruited",
+                    "ARG0": "the company",
+                    "ARG1": "the new employee"
+                }
+            }
+        },
+        {
+            "sentence": "The car crashed into the tree.",
+            "synonym_sentence": "The car collided with the tree.",
+            "propbank_golden_labels": {
+                "Sentence": {
+                    "V": "crashed",
+                    "ARG0": "the car",
+                    "ARG1": "the tree"
+                },
+                "SynonymSentence": {
+                    "V": "collided",
+                    "ARG0": "the car",
+                    "ARG1": "the tree"
+                }
+            }
+        },
+        {
+            "sentence": "The student completed the homework.",
+            "synonym_sentence": "The student finished the homework.",
+            "propbank_golden_labels": { 
+                "Sentence": {
+                    "V": "completed",
+                    "ARG0": "the student",
+                    "ARG1": "the homework"
+                },
+                "SynonymSentence": {
+                    "V": "finished",
+                    "ARG0": "the student",
+                    "ARG1": "the homework"
+                }
+            }
+        },
+        {
+            "sentence": "The chef prepared the meal.",
+            "synonym_sentence": "The chef cooked the meal.",
+            "propbank_golden_labels": { 
+                "Sentence": {
+                    "V": "prepared",
+                    "ARG0": "the chef",
+                    "ARG1": "the meal"
+                },
+                "SynonymSentence": {
+                    "V": "cooked",
+                    "ARG0": "the chef",
+                    "ARG1": "the meal"
+                }
+            }
+        },
+        {
+            "sentence": "The president held a speech.",
+            "synonym_sentence": "The president gave a speech.",
+            "propbank_golden_labels": { 
+                "Sentence": {
+                    "V": "held",
+                    "ARG0": "the president",
+                    "ARG1": "a speech"
+                },
+                "SynonymSentence": {
+                    "V": "gave",
+                    "ARG0": "the president",
+                    "ARG1": "a speech"
+                }
+            }
+        }
+
+    ]
+}

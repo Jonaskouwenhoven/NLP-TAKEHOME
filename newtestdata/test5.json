@@ -1,0 +1,78 @@
+{
+    "test_type": "Clefts",
+    "test_category": "DIR",
+    "tests": [
+        {
+            "sentence": "It was the teacher who gave the students a quiz yesterday.",
+            "propbank_golden_labels": {
+                    "V": "gave",
+                    "ARG0": "the teacher",
+                    "ARG1": "the students",
+                    "ARG2": "a quiz",
+                    "ARGM_TMP": "yesterday"
+            }
+        },
+        {
+            "sentence": "It was the cat that caught the mouse last night.",
+            "propbank_golden_labels": {
+                    "V": "caught",
+                    "ARG0": "the cat",
+                    "ARG1": "the mouse",
+                    "ARGM_TMP": "last night"
+            }
+        },
+        {
+            "sentence": "It was in the library where the student found the missing book.",
+            "propbank_golden_labels": {
+                    "V": "found",
+                    "ARG0": "the student",
+                    "ARG1": "the missing book",
+                    "ARGM_LOC": "in the library"
+            }
+        },
+        {
+            "sentence": "It was the concept of morality that the philosopher discussed at length.",
+            "propbank_golden_labels": {
+                    "V": "discussed",
+                    "ARG0": "the philosopher",
+                    "ARG1": "the concept of morality",
+                    "ARGM_ADV": "at length"
+            }
+        },
+        {
+            "sentence": "It was the dog that chased the cat in the park.",
+            "propbank_golden_labels": {
+                    "V": "chased",
+                    "ARG0": "the dog",
+                    "ARG1": "the cat",
+                    "ARGM_LOC": "in the park"
+            }
+        },
+        {
+            "sentence": "It was the cake that the chef baked for the wedding reception.",
+            "propbank_golden_labels": {
+                    "V": "baked",
+                    "ARG0": "the chef",
+                    "ARG1": "the cake"
+            }
+        },
+        {
+            "sentence": "It was the book that the author spent years writing.",
+            "propbank_golden_labels": {
+                    "V": "writing",
+                    "ARG0": "the author",
+                    "ARG1": "the book",
+                    "ARGM_TMP": "years"
+            }
+        },
+        {
+            "sentence": "It was in the laboratory where the scientist made the groundbreaking discovery.",
+            "propbank_golden_labels": {
+                    "V": "made",
+                    "ARG0": "the scientist",
+                    "ARG1": "the groundbreaking discovery",
+                    "ARGM_LOC": "in the laboratory"
+            }
+        }
+    ]
+}

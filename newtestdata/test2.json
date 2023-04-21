@@ -1,0 +1,79 @@
+{
+    "test_type": "Long Distance Dependencies",
+    "test_category": "MFT",
+    "tests": [
+        {
+            "sentence": "After she had finished her work, she went to the gym to exercise.",
+            "propbank_golden_labels": {
+                "V": "went",
+                "ARG0": "she",
+                "ARGM-TMP": "After she had finished her work,",
+                "ARG1": "to the gym to exercise"
+            }
+        },
+        {
+            "sentence": "Despite the rain and the wind, the team managed to finish the race.",
+            "propbank_golden_labels": {
+                "V": "managed",
+                "ARG0": "the team",
+                "ARGM-ADV": "Despite the rain and the wind,",
+                "ARG1": "to finish the race"
+            }
+        },
+        {
+            "sentence": "After months of preparation and training, he finally climbed to the summit of the mountain.",
+            "propbank_golden_labels": {
+                "V": "climbed",
+                "ARG0": "he",
+                "ARGM-TMP": "After months of preparation and training,",
+                "ARG1": "to the summit of the mountain"
+            }
+        },
+        {
+                "sentence": "After the storm, the sun came out and the birds started singing.",
+                "propbank_golden_labels": {
+                  "V": "singing",
+                  "ARG0": "the birds"
+                }
+
+          },
+          {
+                "sentence": "Although it was raining, he decided to go for a walk in the park.",
+                "propbank_golden_labels": {
+                  "V": "decided",
+                  "ARG0": "he",
+                  "ARGM-ADV": "Although it was raining",
+                  "ARG1": "to go for a walk in the park"
+                }
+          },
+          {
+                "sentence": "While John was cooking dinner, his friends arrived unexpectedly.",
+                "propbank_golden_labels": {
+                  "V": "arrived",
+                  "ARG0": "his friends",
+                  "ARGM-TMP": "While John was cooking dinner",
+                  "ARGM_MNR": "unexpectedly"
+                }
+          },
+          {
+                "sentence": "Despite her busy schedule, she managed to finish the project on time.",
+                "propbank_golden_labels": {
+                  "V": "managed",
+                  "ARG0": "she",
+                  "ARGM-ADV": "Despite her busy schedule",
+                  "ARG1": "to finish the project on time"
+                }
+          },
+          {
+                "sentence": "As soon as he heard the news, he called his family to share the good news.",
+                "propbank_golden_labels": {
+                  "V": "called",
+                  "ARG0": "he",
+                  "ARGM-TMP": "As soon as he heard the news",
+                  "ARG1": "his family",
+                  "ARGM_PRP": "to share the good news"
+                }
+              }              
+    ]
+
+}
