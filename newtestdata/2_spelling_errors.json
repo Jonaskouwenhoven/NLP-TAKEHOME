@@ -146,11 +146,11 @@
         },
         {
             "original_sentence": "The student compleetet the project in two weeks.",
-            "propbank_golden_labels": [
+            "propbank_golden_labels": 
                 {
                         "V": "compleetet"
                 }
-            ]
+            
         }
 
     ]

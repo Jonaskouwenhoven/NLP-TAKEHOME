@@ -21,7 +21,7 @@
             }
         },
         {
-            "original_sentence": "I'm gonna bounce, catch you later.",
+            "original_sentence": "I'm gonna bounce.",
             "propbank_golden_labels": {
                 "V": "bounce"
             }
@@ -51,7 +51,7 @@
             }
         },
         {
-            "original_sentence": "I'm gonna dip out early, catch you later.",
+            "original_sentence": "I'm gonna dip out early tonight.",
             "propbank_golden_labels": {
                 "V": "dip"
             }
@@ -77,7 +77,7 @@
         {
             "original_sentence": "He chickened out of the challenge.",
             "propbank_golden_labels": {
-                "V": "chickened out"
+                "V": "chickened"
             }
         }       
     ]

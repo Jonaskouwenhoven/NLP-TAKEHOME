@@ -100,15 +100,18 @@
                     "Active": {
                         "V": "give",
                         "ARG0": "the teacher",
-                        "ARG1": "the students",
-                        "ARG2": "a quiz",
-                        "ARGM_TMP": "tomorrow"
+                        "ARG2": "the students",
+                        "ARG1": "a quiz",
+                        "ARGM_TMP": "tomorrow",
+                        "ARGM_MOD": "Will"
                     },
                     "Passive": {
                         "V": "given",
                         "ARG1": "a quiz",
                         "ARG2": "the students",
-                        "ARGM_TMP": "by the teacher tomorrow"
+                        "ARG0": "by the teacher",
+                        "ARGM_TMP":"tomorrow",
+                        "ARGM_MOD":"Will"
                     }
                 }
             ]
@@ -127,7 +130,8 @@
                     "Passive": {
                         "V": "produced",
                         "ARG1": "a hit song",
-                        "ARGM_TMP": "by the company last year"
+                        "ARGM0": "by the company",
+                        "ARGM_TMP": "last year"
                     }
                 }
             ]
@@ -146,7 +150,8 @@
                     "Passive": {
                         "V": "completed",
                         "ARG1": "the project",
-                        "ARGM_TMP": "by the student in two weeks"
+                        "ARG0": "by the student",
+                        "ARGM_TMP":  "in two weeks"
                     }
                 }
             ]
