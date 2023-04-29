@@ -3,94 +3,155 @@
     "test_category": "MFT",
     "tests": [
         {
-            "original_sentence": "The boy ate an apple.",
-            "error_sentence": "The boy at an aplle.",
+            "original_sentence": "Tom dancse.",
             "propbank_golden_labels": {
-                "ARG0": "The boy",
-                "V": "at",
-                "ARG1": "an aplle"
+                "V": "dancse"
             }
         },
         {
-            "original_sentence": "She bought a red dress.",
-            "error_sentence": "She bot a red dres.",
+            "original_sentence": "The wind bows.",
             "propbank_golden_labels": {
-                "ARG0": "She",
-                "V": "bot",
-                "ARG1": "a red dres"
+                "V": "bows"
             }
         },
         {
-            "original_sentence": "He loves to play basketball.",
-            "error_sentence": "He loves to ply basketball.",
+            "original_sentence": "The cat chasd the mouse.",
             "propbank_golden_labels": {
-                "ARG0": "He",
-                "V": "loves",
-                "ARG1": "to ply basketball"
+                "V": "chasd"
             }
         },
         {
-            "original_sentence": "The cat chased the mouse.",
-            "error_sentence": "The kat chasd the mose.",
+            "original_sentence": "The boy at an apple.",
             "propbank_golden_labels": {
-                "ARG0": "The kat",
-                "V": "chasd",
-                "ARG1": "the mose"
+                "V": "at"
             }
         },
         {
-            "original_sentence": "The teacher graded the exams.",
-            "error_sentence": "The teecher gradded the exms.",
+            "original_sentence": "She boght a red dress.",
             "propbank_golden_labels": {
-                "ARG0": "The teecher",
-                "V": "gradded",
-                "ARG1": "the exms"
+                "V": "boght"
             }
         },
         {
-            "original_sentence": "The dog chased the cat.",
-            "error_sentence": "The doog chasd the kat.",
+            "original_sentence": "The teacher grad the exams.",
             "propbank_golden_labels": {
-                "ARG0": "The doog",
-                "V": "chasd",
-                "ARG1": "the kat"
+                "V": "grad"
             }
         },
+
         {
-            "original_sentence": "The man rode his bike to work.",
-            "error_sentence": "The mn roed his bke to work.",
+            "original_sentence": "The rain poued down from the dark clouds above.",
             "propbank_golden_labels": {
-                "ARG0": "The mn",
-                "V": "roed",
-                "ARG1": "his bke to work"
+                "V": "poued"
             }
         },
         {
             "original_sentence": "She sang a beautiful song.",
-            "error_sentence": "She sang a butiful sonng.",
             "propbank_golden_labels": {
-                "ARG0": "She",
-                "V": "sang",
-                "ARG1": "a butiful sonng"
+                "V": "sang"
+
             }
         },
         {
-            "original_sentence": "The boy kicked the ball.",
-            "error_sentence": "The boy kiked the bal.",
+            "original_sentence": "The boy kickd the ball.",
             "propbank_golden_labels": {
-                "ARG0": "The boy",
-                "V": "kiked",
-                "ARG1": "the bal"
+                "V": "kickd"
             }
         },
         {
-            "original_sentence": "The woman cooked a delicious meal.",
-            "error_sentence": "The womn coookd a delisious meel.",
+            "original_sentence": "The dog barket loudly at the mailman.",
             "propbank_golden_labels": {
-                "ARG0": "The womn",
-                "V": "coookd",
-                "ARG1": "a delisious meel"
+                "V": "barket"
             }
+        },
+        {
+            "original_sentence": "The dog barkss.",
+            "propbank_golden_labels": {
+                "V": "barkss"
+            }
+        },
+        {
+            "original_sentence": "The bird chirss.",
+            "propbank_golden_labels": {
+                "V": "chirss"
+            }
+        },
+        {
+            "original_sentence": "The phone rings.",
+            "propbank_golden_labels": {
+                "V": "rings"
+            }
+        },
+        {
+            "original_sentence": "The car hnks.",
+            "propbank_golden_labels": {
+                "V": "hnks"
+            }
+        },
+        {
+            "original_sentence": "The flowers bloem brightly in the spring.",
+            "propbank_golden_labels": {
+                "V": "bloem"
+            }
+        },
+        {
+            "original_sentence": "The chef prepoars a delicious meal in the kitchen.",
+            "propbank_golden_labels": {
+                "V": "prepoars"
+            }
+        },
+        {
+            "original_sentence": "The children plee in the park after school.",
+            "propbank_golden_labels": {
+                "V": "plee"
+            }
+        },
+        {
+            "original_sentence": "The project, developd by the team of engineers who won the national competition, imprezzed the judges.",
+            "propbank_golden_labels": {
+                "V": "imprezzed"
+
+            }
+        },
+        {
+            "original_sentence": "The book, written by the author who was inspired by her childhood experiences, bcame a bestseller.",
+            "propbank_golden_labels": {
+                "V": "bcame"
+            }
+        },
+        {
+            "original_sentence": "She cout the cake with a knife.",
+            "propbank_golden_labels": {
+                "V": "cout"
+
+            }
+        },
+        {
+            "original_sentence": "He pinted the wall with a brush.",
+            "propbank_golden_labels": {
+                "V": "pinted"
+            }
+        },
+        {
+            "original_sentence": "She danst with grace.",
+            "propbank_golden_labels": {
+                "V": "danst"
+            }
+        },
+        {
+            "original_sentence": "He wrooot the report with diligence.",
+            "propbank_golden_labels": {
+                "V": "wrooot"
+            }
+        },
+        {
+            "original_sentence": "The student compleetet the project in two weeks.",
+            "propbank_golden_labels": [
+                {
+                        "V": "compleetet"
+                }
+            ]
         }
+
     ]
 }

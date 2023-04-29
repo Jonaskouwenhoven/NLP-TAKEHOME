@@ -18,14 +18,14 @@ def check_long_distance(gold_data, predicted_data, original_sentence, model_name
     predicted_patient = predicted_data.get("ARG0", "").lower()
     if gold_patient not in predicted_patient:
         with open(f"{model_name}_failures.txt", "a") as f:
-            f.write(f"Error: Failed to correctly identify patient in sentence '{original_sentence}'. Gold label: '{gold_patient}'. Predicted label: '{predicted_patient}'.\n")
+            f.write(f"\nError: Failed to correctly identify patient in sentence '{original_sentence}'. Gold Data: '{gold_data}',  Gold label: '{gold_patient}'. Predicted label: '{predicted_patient}'.\n")
         return 0
 
     gold_agent = gold_data.get("ARG1", "").lower()
     predicted_agent = predicted_data.get("ARG1", "").lower()
     if gold_agent not in predicted_agent:
         with open(f"{model_name}_failures.txt", "a") as f:
-            f.write(f"Error: Failed to correctly identify agent in sentence '{original_sentence}'. Gold label: '{gold_agent}'. Predicted label: '{predicted_agent}'.\n")
+            f.write(f"Error: Failed to correctly identify agent in sentence '{original_sentence}'. Gold Data: '{gold_data}', Gold label: '{gold_agent}'. Predicted label: '{predicted_agent}'.\n")
         return 0
     
     return 1
@@ -42,7 +42,7 @@ def check_pred(gold_pred, output, model_name, sentence):
             return 0
     else:
         with open(f"{model_name}_failures.txt", "a") as f:
-            f.write(f"Sentence: {sentence}, No 'V' label in output: {output}\n")
+            f.write(f"The model couldnt find a predicate in the sentence: {sentence}, it's in output: {output}\n")
         return 0
 
 
@@ -52,7 +52,7 @@ def check_arguments(gold, predicted, model_name, original_sentence):
             if gold[key].lower() == predicted[key].lower():
                 continue
             else:
-                error_message = f"Model {model_name} failed to correctly label the {key} argument in the sentence: {original_sentence}."
+                error_message = f"Model {model_name} failed to correctly label the {key} argument in the sentence: {original_sentence}, with the golden label {gold}."
                 error_message += f"\nExpected value: {gold[key]}."
                 error_message += f"\nActual value: {predicted[key]}."
                 with open(f"{model_name}_failures.txt", "a") as f:
@@ -252,7 +252,7 @@ def test_seven():
     """
     Testing the SRL model on the test data for contextual infromation
     """
-    df = pd.read_json("newtestdata/4_agent_patient_long_distance.json")
+    df = pd.read_json("newtestdata/7_agent_patient_long_distance.json")
     tests = df['tests']
     print(f"Number of tests: {len(tests)}")
 
