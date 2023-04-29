@@ -1,0 +1,75 @@
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+
+Starting new test: One verb Sentences
+
+Starting new test: Spelling Errors
+Sentence: The boy ate an apple., No 'V' label in output: {}
+Sentence: She bought a red dress., No 'V' label in output: {}
+Sentence: The cat chased the mouse., No 'V' label in output: {}
+Sentence: The teacher graded the exams., No 'V' label in output: {}
+Sentence: The dog chased the cat., No 'V' label in output: {}
+Sentence: The man rode his bike to work., No 'V' label in output: {}
+Sentence: The boy kicked the ball., No 'V' label in output: {}
+Sentence: The woman cooked a delicious meal., No 'V' label in output: {}
+
+Starting new test: Active vs. Passive
+Model SRL failed to label the ARG1 argument in the sentence: The exams were graded by the teacher..
+
+Model SRL failed to label the ARG1 argument in the sentence: A new product is being launched by the company..
+
+Model SRL failed to label the ARGM_AGENT argument in the sentence: The ball was kicked by the boy..
+
+Model SRL failed to correctly label the ARG1 argument in the sentence: The teacher will give the students a quiz tomorrow..
+Expected value: the students.
+Actual value: a quiz.
+
+Model SRL failed to correctly label the ARG1 argument in the sentence: The students will be given a quiz by the teacher tomorrow..
+Expected value: a quiz.
+Actual value: a quiz by the teacher.
+
+Model SRL failed to label the ARGM_TMP argument in the sentence: The company produced a hit song last year..
+
+Model SRL failed to label the ARGM_TMP argument in the sentence: A hit song was produced by the company last year..
+
+Model SRL failed to label the ARGM_TMP argument in the sentence: The student completed the project in two weeks..
+
+Model SRL failed to label the ARGM_TMP argument in the sentence: The project was completed by the student in two weeks..
+
+Model SRL failed to label the ARGM_LOC argument in the sentence: The dog chased the cat out of the garden..
+
+Model SRL failed to label the ARGM_LOC argument in the sentence: The cat was chased out of the garden by the dog..
+
+
+Starting new test: Instruments
+Model SRL failed on sentence: She cut the cake with a knife.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'cut', 'ARG1': 'the cake', 'ARGM-MNR': 'with a knife'}.
+Model SRL failed on sentence: She wrote the letter with a pen.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'wrote', 'ARG1': 'the letter', 'ARGM-MNR': 'with a pen'}.
+Model SRL failed on sentence: He cooked the food with a stove.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'cooked', 'ARG1': 'the food', 'ARGM-MNR': 'with a stove'}.
+
+Starting new test: Context
+Model SRL failed on sentence: They built the house with care.. No ARGM-MNR label found in output: {'ARG0': 'They', 'V': 'built', 'ARG1': 'the house', 'ARG2': 'with care'}.
+Model SRL failed on sentence: She painted the picture with attention to detail.. Expected argument with attention to detail in ARGM-MNR but got to detail.
+Model SRL failed on sentence: He drove the car with caution.. No ARGM-MNR label found in output: {'ARG0': 'He', 'V': 'drove', 'ARG1': 'the car', 'ARG2': 'with caution'}.
+Model SRL failed on sentence: The athlete trained with determination.. No ARGM-MNR label found in output: {'ARG0': 'The athlete', 'V': 'trained', 'ARG2': 'with determination'}.
+Model SRL failed on sentence: She danced with grace.. No ARGM-MNR label found in output: {'ARG0': 'She', 'V': 'danced', 'ARG2': 'with grace'}.
+
+Starting new test: Slang
+Sentence: I gotta jet, see you later., No 'V' label in output: {}
+Sentence: I can't even with this traffic today., No 'V' label in output: {}
+Sentence: He chickened out of the challenge., No 'V' label in output: {}
+
+Starting new test: Long Distance
+Error: Failed to correctly identify patient in sentence 'The book, written by the author who was inspired by her childhood experiences, became a bestseller.'. Gold label: 'the author who was inspired by her childhood experiences'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The flowers, nurtured by the gardener with great care, bloomed beautifully.'. Gold label: 'the gardener with great care'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The cake, baked by the chef who had years of experience, was the highlight of the party.'. Gold label: 'the cake'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The painting, created by the artist who had studied the old masters, sold for a high price.'. Gold label: 'the painting'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The bridge, designed by the renowned architect who had a unique vision, became a popular landmark.'. Gold label: 'the bridge'. Predicted label: ''.

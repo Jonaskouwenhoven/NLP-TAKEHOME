@@ -24,9 +24,10 @@ def get_constituent(predicate, srl_output):
 
 
 def get_constituent_list(string):
-
+    # print(string)
     # define a regular expression pattern to match the relevant words
-    pattern = r'\[(ARG\d+|V):\s*([^\]]+)\]|(\b\w+\b)'
+    # pattern = r'\[(ARG\d+|V):\s*([^\]]+)\]|(\b\w+\b)'
+    pattern = r"\[([^:]+):\s+([^\]]+)\]"
 
     # find all matches of the pattern in the string
     matches = re.findall(pattern, string)
@@ -39,15 +40,18 @@ def get_constituent_list(string):
 
         words.append(string[-1])
 
+    # print(words)
     return words    
 
 
 def parse_string(input_string):
     """
-    Parses the string output of the SRL model into a dictionary
+    Parses the string output of the SRL model into a dictionary FOUT
     """
     # define a regular expression pattern to match the string format
-    pattern = r"\[(\w+): ([^]]+)\]"
+    # pattern = r"\[(\w+): ([^]]+)\]"
+    pattern = r"\[([^:]+):\s+([^\]]+)\]"
+
         # search for matches using the pattern
     matches = re.findall(pattern, input_string)
     
@@ -90,10 +94,14 @@ def classify(predict, gold):
 def get_description(verb, srl_output):
     """
     Returns the description of the verb
-    """
+    # """
+    # print("Were getting the description")
+    # print("The verb is", verb)
     for verb1 in srl_output['verbs']:
         
         if verb1['verb'] == verb:
+
+            # print(verb1['description'])
             return verb1['description']
         
     # print(srl_output)
@@ -124,14 +132,16 @@ def calculate_failure(total, correct):
 def predict_SRL_BERT(text, gold):
     
     predicted_outputs = MODEL_SRL_BERT.predict(sentence = text)
+
     description = get_description(gold, predicted_outputs)
+
     return get_constituent_list(description), parse_string(description)
 
 
 def predict_SRL(text, gold):
         
     predicted_outputs = MODEL_SRL.predict(sentence = text)
-
+    
     
     return parse_string(get_description(gold, predicted_outputs))
 

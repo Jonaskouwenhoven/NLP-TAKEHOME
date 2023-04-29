@@ -1,0 +1,84 @@
+{
+    "test_type": "Predicate Slang",
+    "test_category": "MFT",
+    "tests": [
+        {
+            "original_sentence": "I can't believe he ghosted me.",
+            "propbank_golden_labels": {
+                "V": "ghosted"
+            }
+        },
+        {
+            "original_sentence": "He totally flaked on our plans.",
+            "propbank_golden_labels": {
+                "V": "flaked"
+            }
+        },
+        {
+            "original_sentence": "I gotta jet, see you later.",
+            "propbank_golden_labels": {
+                "V": "jet"
+            }
+        },
+        {
+            "original_sentence": "I'm gonna bounce, catch you later.",
+            "propbank_golden_labels": {
+                "V": "bounce"
+            }
+        },
+        {
+            "original_sentence": "That party was lit!",
+            "propbank_golden_labels": {
+                "V": "was"
+            }
+        },
+        {
+            "original_sentence": "He totally slayed that performance last night!",
+            "propbank_golden_labels": {
+                "V": "slayed"
+            }
+        },
+        {
+            "original_sentence": "I can't even with this traffic today.",
+            "propbank_golden_labels": {
+                "V": "even"
+            }
+        },
+        {
+            "original_sentence": "They're gonna bounce soon, so we better hurry.",
+            "propbank_golden_labels": {
+                "V": "bounce"
+            }
+        },
+        {
+            "original_sentence": "I'm gonna dip out early, catch you later.",
+            "propbank_golden_labels": {
+                "V": "dip"
+            }
+        },
+        {
+            "original_sentence": "She's been ghosting me for weeks now.",
+            "propbank_golden_labels": {
+                "V": "ghosting"
+            }
+        },
+        {
+            "original_sentence": "He flexed on his ex.",
+            "propbank_golden_labels": {
+                "V": "flexed"
+            }
+        },
+        {
+            "original_sentence": "She bailed on me at the last minute.",
+            "propbank_golden_labels": {
+                "V": "bailed"
+            }
+        },
+        {
+            "original_sentence": "He chickened out of the challenge.",
+            "propbank_golden_labels": {
+                "V": "chickened out"
+            }
+        }       
+    ]
+}

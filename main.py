@@ -7,99 +7,150 @@ import re
 import string as string_value
 # from predict import pred.predict_SRL, pred.predict_SRL_BERT, pred.predict_SRL_group9
 import predict as pred
+
+
+MODEL_NAME_BERT = "SRL_BERT"
+MODEL_NAME_GROUP_9 = "Group_9"
+MODEL_NAME_SRL = "SRL"
+
+def check_long_distance(gold_data, predicted_data, original_sentence, model_name):
+    gold_patient = gold_data.get("ARG0", "").lower()
+    predicted_patient = predicted_data.get("ARG0", "").lower()
+    if gold_patient not in predicted_patient:
+        with open(f"{model_name}_failures.txt", "a") as f:
+            f.write(f"Error: Failed to correctly identify patient in sentence '{original_sentence}'. Gold label: '{gold_patient}'. Predicted label: '{predicted_patient}'.\n")
+        return 0
+
+    gold_agent = gold_data.get("ARG1", "").lower()
+    predicted_agent = predicted_data.get("ARG1", "").lower()
+    if gold_agent not in predicted_agent:
+        with open(f"{model_name}_failures.txt", "a") as f:
+            f.write(f"Error: Failed to correctly identify agent in sentence '{original_sentence}'. Gold label: '{gold_agent}'. Predicted label: '{predicted_agent}'.\n")
+        return 0
+    
+    return 1
+
+
+def check_pred(gold_pred, output, model_name, sentence):
+    if 'V' in output:
+        srl_pred = output['V']
+        if srl_pred == gold_pred:
+            return 1
+        else:
+            with open(f"{model_name}_failures.txt", "a") as f:
+                f.write(f"Sentence: {sentence}, Gold Label: {gold_pred}, Predicted Label: {srl_pred}, Output: {output}\n")
+            return 0
+    else:
+        with open(f"{model_name}_failures.txt", "a") as f:
+            f.write(f"Sentence: {sentence}, No 'V' label in output: {output}\n")
+        return 0
+
+
+def check_arguments(gold, predicted, model_name, original_sentence):
+    for key in gold.keys():
+        if key in predicted.keys():
+            if gold[key].lower() == predicted[key].lower():
+                continue
+            else:
+                error_message = f"Model {model_name} failed to correctly label the {key} argument in the sentence: {original_sentence}."
+                error_message += f"\nExpected value: {gold[key]}."
+                error_message += f"\nActual value: {predicted[key]}."
+                with open(f"{model_name}_failures.txt", "a") as f:
+                    f.write(error_message + "\n\n")
+                return 0
+        else:
+            error_message = f"Model {model_name} failed to label the {key} argument in the sentence: {original_sentence}."
+            with open(f"{model_name}_failures.txt", "a") as f:
+                f.write(error_message + "\n\n")
+            return 0
+
+    return 1
+
+
+
+def check_instrument_context(output, argument, arg_label='ARG2', model_name=None, original_sentence=None):
+    if arg_label in output:
+        if argument in output[arg_label]:
+            return 1
+        else:
+            error_message = f"Model {model_name} failed on sentence: {original_sentence}. Expected argument {argument} in {arg_label} but got {output[arg_label]}."
+            with open(f"{model_name}_failures.txt", "a") as f:
+                f.write(error_message + "\n")
+            return 0
+    else:
+        error_message = f"Model {model_name} failed on sentence: {original_sentence}. No {arg_label} label found in output: {output}."
+        with open(f"{model_name}_failures.txt", "a") as f:
+            f.write(error_message + "\n")
+        return 0
+
+
+def run_predicate_test(test_name, test_data):
+    total_srl, total_srl_bert, total_group_9 = 0, 0, 0
+    for test in test_data:
+        sentence = test['original_sentence']
+        golden_labels = test['propbank_golden_labels']
+        predicate = golden_labels['V']
+
+        try:
+            constituent, output_srl_bert = pred.predict_SRL_BERT(sentence, predicate)
+            output_group_9 = pred.predict_SRL_group9(sentence, constituent)
+
+            score_srl_bert = check_pred(predicate, output_srl_bert, MODEL_NAME_BERT, sentence)
+            score_group_9 = check_pred(predicate, output_group_9, MODEL_NAME_GROUP_9, sentence)
+        except:
+            score_srl_bert = 0
+            score_group_9 = 0
+
+        try:
+            output_srl = pred.predict_SRL(sentence, predicate)
+            score_srl = check_pred(predicate, output_srl, MODEL_NAME_SRL, sentence )
+
+        except:
+            score_srl = 0
+        
+        total_srl += score_srl
+        total_srl_bert += score_srl_bert
+        total_group_9 += score_group_9
+
+    return pred.calculate_failure(len(test_data), total_srl), pred.calculate_failure(len(test_data), total_srl_bert),  pred.calculate_failure(len(test_data), total_group_9)
+
+
 def test_one():
     """
-    Testing SRL capability on handeling, statement -> multiple realizations
+    Testing the SRL model on the test data for one verb sentences
     """
-    
-    df = pd.read_json("testdata/test1.json")
+    df = pd.read_json("newtestdata/1_one_verb.json")
     tests = df['tests']
     print(f"Number of tests: {len(tests)}")
-    total_srl, total_srl_bert, total_group_9 = 0, 0, 0
-    for test in tests[:]:
-        original = test['proposition']
-        realizations = test['realizations']
-        real_srl, real_srl_bert, real_group_9 = 1, 1, 1
-        for real in realizations:
-            sentence = real['realization']
-            gold_label = real['propbank_golden_labels']
-          
-            predicate_gold = gold_label['V']
+    return run_predicate_test("One verb sentences", tests)
 
-            
-            constituent, output_srl_bert = pred.predict_SRL_BERT(sentence, predicate_gold)
-            output_srl = pred.predict_SRL(sentence, predicate_gold)
-
-
-            output_group_9 = pred.predict_SRL_group9(sentence, constituent)
-            
-
-            real_srl *= pred.classify(output_srl, gold_label)
-            real_srl_bert *= pred.classify(output_srl_bert, gold_label)
-            real_group_9 *= pred.classify(output_group_9, gold_label)
-
-        total_srl += real_srl
-        total_srl_bert += real_srl_bert
-        total_group_9 += real_group_9
-
-
-    return pred.calculate_failure(len(tests), total_srl), pred.calculate_failure(len(tests), total_srl_bert), pred.calculate_failure(len(tests), total_group_9)
 
 def test_two():
-        
     """
-    Testing SRL capability on handeling, statement -> Question
+    Testing the SRL model on the test data for spelling errors
     """
-    # TODO check if predicted is correct
-    df = pd.read_json("testdata/test2.json")
+    df = pd.read_json("newtestdata/2_spelling_errors.json")
     tests = df['tests']
     print(f"Number of tests: {len(tests)}")
-
-    total_srl, total_srl_bert, total_group_9 = 0, 0, 0
-    for test in tests:
-
-        statement = test['statement']
-        question = test['question']
-
-        golden_labels = test['propbank_golden_labels'][0]
-
-        statement_gold = golden_labels['Statement']
-        question_gold = golden_labels['Question']
-
-        statement_pred = statement_gold['V']
-        question_pred = question_gold['V']
+    return run_predicate_test("Spelling errors", tests)
 
 
-        constituent, output_statement_srl_bert = pred.predict_SRL_BERT(statement, statement_pred)
-        output_statement_srl = pred.predict_SRL(statement, statement_pred)
-        output_statement_group_9 = pred.predict_SRL_group9(statement, constituent)
+def test_six():
+    """
+    Testing the SRL model on the test data for spelling errors
+    """
+    df = pd.read_json("newtestdata/6_slang.json")
+    tests = df['tests']
+    print(f"Number of tests: {len(tests)}")
+    return run_predicate_test("Slang", tests)  
 
-
-        constituent, output_question_srl_bert = pred.predict_SRL_BERT(question, question_pred)
-
-        output_question_srl = pred.predict_SRL(question, question_pred)
-        output_question_group_9 = pred.predict_SRL_group9(question, constituent)
-
-        SRL_score = pred.classify(output_statement_srl, statement_gold) * pred.classify(output_question_srl, question_gold)
-
-        SRL_BERT_score = pred.classify(output_statement_srl_bert, statement_gold) * pred.classify(output_question_srl_bert, question_gold)
-
-        SRL_group_9_score = pred.classify(output_statement_group_9, statement_gold) * pred.classify(output_question_group_9, question_gold)
-
-        
-        total_srl += SRL_score
-        total_srl_bert += SRL_BERT_score
-        total_group_9 += SRL_group_9_score
-
-
-    return pred.calculate_failure(len(tests), total_srl), pred.calculate_failure(len(tests), total_srl_bert), pred.calculate_failure(len(tests), total_group_9)
 
 
 def test_three():
     """
     Testing SRL capabiltie of handeling, active -> passive
     """
-    df = pd.read_json("testdata/test3.json")
+    df = pd.read_json("newtestdata/3_activevsPassive.json")
     tests = df['tests']
     print(f"Number of tests: {len(tests)}")
 
@@ -113,227 +164,129 @@ def test_three():
         active_gold = golden_labels['Active']
         passive_gold = golden_labels['Passive']
 
+        copy_active_gold = active_gold.copy()
+        copy_passive_gold = passive_gold.copy()
         active_predicate = active_gold['V']
         passive_predicate = passive_gold['V']
 
-
-
-        constituent, output_active_srl = pred.predict_SRL_BERT(active, active_predicate)
-        output_active_srl_bert = pred.predict_SRL(active, active_gold)
+        constituent, output_active_srl_bert = pred.predict_SRL_BERT(active, active_predicate)
+        output_active_srl = pred.predict_SRL(active, active_predicate)
         output_active_group_9 = pred.predict_SRL_group9(active, constituent)
+        del copy_active_gold['V']
 
 
-        constituent, output_passive_srl = pred.predict_SRL_BERT(passive, passive_predicate)
-        output_passive_srl_bert = pred.predict_SRL(passive, passive_predicate)
+        constituent, output_passive_srl_bert = pred.predict_SRL_BERT(passive, passive_predicate)
+        output_passive_srl = pred.predict_SRL(passive, passive_predicate)
         output_passive_group_9 = pred.predict_SRL_group9(passive, constituent)
 
-
-        srl += (pred.classify(output_active_srl, active_gold) * pred.classify(output_passive_srl, passive_gold))
-        bert += (pred.classify(output_active_srl_bert, active_gold) * pred.classify(output_passive_srl_bert, passive_gold))
-        group9 += (pred.classify(output_active_group_9, active_gold) * pred.classify(output_passive_group_9, passive_gold))
+        del copy_passive_gold['V']
 
 
-    return pred.calculate_failure(len(tests), srl), pred.calculate_failure(len(tests), bert), pred.calculate_failure(len(tests), group9)
+        bert += (check_arguments(copy_active_gold, output_active_srl_bert, MODEL_NAME_BERT, active) * check_arguments(copy_passive_gold, output_passive_srl_bert, MODEL_NAME_BERT, passive))
+        srl += (check_arguments(copy_active_gold, output_active_srl, MODEL_NAME_SRL, active)* check_arguments(copy_passive_gold, output_passive_srl, MODEL_NAME_SRL, passive))
+        group9 += (check_arguments(copy_active_gold, output_active_group_9, MODEL_NAME_GROUP_9, active) * check_arguments(copy_passive_gold, output_passive_group_9, MODEL_NAME_GROUP_9, passive))
+
+
+    return pred.calculate_failure(len(tests), bert), pred.calculate_failure(len(tests), srl),  pred.calculate_failure(len(tests), group9)
 
 
 def test_four():
     """
-    Testing the SRL model on the test data for Cleft sentences
+    Testing the SRL model on the test data for instruments
     """
-    df = pd.read_json("testdata/test4.json")
+    df = pd.read_json("newtestdata/4_instruments.json")
     tests = df['tests']
     print(f"Number of tests: {len(tests)}")
 
     total_srl, total_srl_bert, total_group_9 = 0, 0, 0
     for test in tests:
-        sentence = test['sentence']
-        golden_labels = test['propbank_golden_labels']
+        sentence = test['original_sentence']
 
+        golden_labels = test['propbank_golden_labels']
+        instrument = golden_labels['ARG2']
+        print(golden_labels, instrument)
         predicate = golden_labels['V']
         constituent, output_srl_bert = pred.predict_SRL_BERT(sentence, predicate)
 
         output_srl = pred.predict_SRL(sentence, predicate)
         output_group_9 = pred.predict_SRL_group9(sentence, constituent)
 
+        total_srl += check_instrument_context(output_srl, instrument, model_name=MODEL_NAME_SRL, original_sentence=sentence)
+        total_srl_bert += check_instrument_context(output_srl_bert, instrument, model_name=MODEL_NAME_BERT, original_sentence=sentence)
+        total_group_9 += check_instrument_context(output_group_9, instrument, model_name=MODEL_NAME_GROUP_9, original_sentence=sentence)
 
-        total_srl += pred.classify(output_srl, golden_labels)
-        total_srl_bert += pred.classify(output_srl_bert, golden_labels)
-        total_group_9 += pred.classify(output_group_9, golden_labels)
-    
 
     return pred.calculate_failure(len(tests), total_srl), pred.calculate_failure(len(tests), total_srl_bert), pred.calculate_failure(len(tests), total_group_9)
 
 def test_five():
-        
     """
-    Testing SRL capability on handeling, Verb Alternations/Levin's classes (DIR)
+    Testing the SRL model on the test data for contextual infromation
     """
-    df = pd.read_json("testdata/test5.json")
+    df = pd.read_json("newtestdata/5_context.json")
     tests = df['tests']
     print(f"Number of tests: {len(tests)}")
 
     total_srl, total_srl_bert, total_group_9 = 0, 0, 0
     for test in tests:
-
-        causative = test['causative']
-        inchoative = test['inchoative']
+        sentence = test['original_sentence']
 
         golden_labels = test['propbank_golden_labels']
+        manner = golden_labels['ARGM-MNR']
 
-        causative_gold = golden_labels['causative']
-        inchoative_gold = golden_labels['inchoative']
+        predicate = golden_labels['V']
+        constituent, output_srl_bert = pred.predict_SRL_BERT(sentence, predicate)
 
-        causative_pred = causative_gold['V']
-        inchoative_pred = inchoative_gold['V']
+        output_srl = pred.predict_SRL(sentence, predicate)
+        output_group_9 = pred.predict_SRL_group9(sentence, constituent)
 
+        total_srl += check_instrument_context(output_srl, manner, 'ARGM-MNR', model_name=MODEL_NAME_SRL, original_sentence=sentence)
+        total_srl_bert += check_instrument_context(output_srl_bert, manner, 'ARGM-MNR', model_name=MODEL_NAME_BERT, original_sentence=sentence)
+        total_group_9 += check_instrument_context(output_group_9, manner, 'ARGM-MNR', model_name=MODEL_NAME_GROUP_9, original_sentence=sentence)
 
-        constituent, output_causative_srl_bert = pred.predict_SRL_BERT(causative, causative_pred)
-        output_causative_srl = pred.predict_SRL(causative, causative_pred)
-        output_causative_group_9 = pred.predict_SRL_group9(causative, constituent)
-
-
-        constituent, output_inchoative_srl_bert = pred.predict_SRL_BERT(inchoative, inchoative_pred)
-        output_inchoative_srl = pred.predict_SRL(inchoative, inchoative_pred)
-        output_inchoative_group_9 = pred.predict_SRL_group9(inchoative, constituent)
-
-
-        SRL_score = pred.classify(output_causative_srl, causative_gold) * pred.classify(output_inchoative_srl, inchoative_gold)
-
-        SRL_BERT_score = pred.classify(output_causative_srl_bert, causative_gold) * pred.classify(output_inchoative_srl_bert, inchoative_gold)
-
-        SRL_group_9_score = pred.classify(output_causative_group_9, causative_gold) * pred.classify(output_inchoative_group_9, inchoative_gold)
-
-
-        total_srl += SRL_score
-        total_srl_bert += SRL_BERT_score
-        total_group_9 += SRL_group_9_score
-
-        
 
     return pred.calculate_failure(len(tests), total_srl), pred.calculate_failure(len(tests), total_srl_bert), pred.calculate_failure(len(tests), total_group_9)
 
-def test_six():
-    """
-    Testing SRL capabiltie of handeling, active -> passive
-    """
-    df = pd.read_json("testdata/test6.json")
-    tests = df['tests']
-    print(f"Number of tests: {len(tests)}")
-
-    srl, bert, group9 = 0, 0, 0
-    for test in tests:
-        sentence = test['sentence']
-        synonym = test['synonym_sentence']
-        golden_labels = test['propbank_golden_labels']
-
-        sentence_gold = golden_labels['Sentence']
-        synonym_gold = golden_labels['SynonymSentence']
-
-        sentence_predicate = sentence_gold['V']
-        synonym_predicate = synonym_gold['V']
-
-
-
-        constituent, output_sentence_srl_bert = pred.predict_SRL_BERT(sentence, sentence_predicate)
-        output_sentence_srl = pred.predict_SRL(sentence, sentence_predicate)
-        output_sentence_group_9 = pred.predict_SRL_group9(sentence, constituent)
-
-
-        constituent, output_synonym_srl_bert = pred.predict_SRL_BERT(synonym, synonym_predicate)
-        output_synonym_srl = pred.predict_SRL(synonym, synonym_predicate)
-        output_synonym_group_9 = pred.predict_SRL_group9(synonym, constituent)
-
-        srl += (pred.classify(output_sentence_srl, sentence_gold) * pred.classify(output_synonym_srl, synonym_gold))
-        bert += (pred.classify(output_sentence_srl_bert, sentence_gold) * pred.classify(output_synonym_srl_bert, synonym_gold))
-        group9 += (pred.classify(output_sentence_group_9, sentence_gold) * pred.classify(output_synonym_group_9, synonym_gold))
-
-
-    return pred.calculate_failure(len(tests), srl), pred.calculate_failure(len(tests), bert), pred.calculate_failure(len(tests), group9)
 
 
 def test_seven():
     """
-    Testing the SRL model on the test data for Polysemy - Lexical Semantics
+    Testing the SRL model on the test data for contextual infromation
     """
-    df = pd.read_json("testdata/test7.json")
+    df = pd.read_json("newtestdata/4_agent_patient_long_distance.json")
     tests = df['tests']
     print(f"Number of tests: {len(tests)}")
 
     total_srl, total_srl_bert, total_group_9 = 0, 0, 0
     for test in tests:
-        sentence = test['sentence']
+        sentence = test['original_sentence']
+
         golden_labels = test['propbank_golden_labels']
+
         predicate = golden_labels['V']
         constituent, output_srl_bert = pred.predict_SRL_BERT(sentence, predicate)
 
         output_srl = pred.predict_SRL(sentence, predicate)
         output_group_9 = pred.predict_SRL_group9(sentence, constituent)
 
-        total_srl += pred.classify(output_srl, golden_labels)
-        total_srl_bert += pred.classify(output_srl_bert, golden_labels)
-        total_group_9 += pred.classify(output_group_9, golden_labels)
 
-    return pred.calculate_failure(len(tests), total_srl), pred.calculate_failure(len(tests), total_srl_bert), pred.calculate_failure(len(tests), total_group_9)
+        del golden_labels['V']
 
-
-def test_eight():
-    """
-    Testing the SRL model on the test data for spelling errors
-    """
-    df = pd.read_json("testdata/test8.json")
-    tests = df['tests']
-    print(f"Number of tests: {len(tests)}")
-
-    total_srl, total_srl_bert, total_group_9 = 0, 0, 0
-    for test in tests:
-        sentence = test['error_sentence']
-        golden_labels = test['propbank_golden_labels']
-
-        predicate = golden_labels['V']
-
-        try:
-            constituent, output_srl_bert = pred.predict_SRL_BERT(sentence, predicate)
-            output_group_9 = pred.predict_SRL_group9(sentence, constituent)
-            score_srl_bert = pred.classify(output_srl_bert, golden_labels)
-            score_group_9 = pred.classify(output_group_9, golden_labels)
-        except:
-            score_srl_bert = 0
-            score_group_9 = 0
-
-        try:
-            output_srl = pred.predict_SRL(sentence, predicate)
-            score_srl = pred.classify(output_srl, golden_labels)
-        except:
-            score_srl = 0
-
-        total_srl += score_srl
-        total_srl_bert += score_srl_bert
-        total_group_9 += score_group_9
-
-    return pred.calculate_failure(len(tests), total_srl), pred.calculate_failure(len(tests), total_srl_bert), pred.calculate_failure(len(tests), total_group_9)
-
-def test_nine():
-    df = pd.read_json("testdata/test9.json")
-    tests = df['tests']
-    print(f"Number of tests: {len(tests)}")
-
-    total_srl, total_srl_bert, total_group_9 = 0, 0, 0
-    for test in tests:
-
-        sentence = test['sentence']
-        golden_labels = test['propbank_golden_labels']
-        predicate = golden_labels['V']
-        constituent, output_srl_bert = pred.predict_SRL_BERT(sentence, predicate)
-
-        output_srl = pred.predict_SRL(sentence, predicate)
-        output_group_9 = pred.predict_SRL_group9(sentence, constituent)
-
-        total_srl += pred.classify(output_srl, golden_labels)
-        total_srl_bert += pred.classify(output_srl_bert, golden_labels)
-        total_group_9 += pred.classify(output_group_9, golden_labels)
+        total_srl += check_long_distance(golden_labels, output_srl, sentence, MODEL_NAME_SRL)
+        total_srl_bert += check_long_distance(golden_labels, output_srl_bert, sentence, MODEL_NAME_BERT)
+        total_group_9 += check_long_distance(golden_labels, output_group_9, sentence, MODEL_NAME_GROUP_9)
 
 
     return pred.calculate_failure(len(tests), total_srl), pred.calculate_failure(len(tests), total_srl_bert), pred.calculate_failure(len(tests), total_group_9)
+
+
+
+def write_test_start_message(model_name, test_type):
+    with open(f"{MODEL_NAME_BERT}_failures.txt", "a") as f:
+        f.write(f"\nStarting new test: {test_type}\n")
+    with open(f"{MODEL_NAME_GROUP_9}_failures.txt", "a") as f:
+        f.write(f"\nStarting new test: {test_type}\n")
+    with open(f"{MODEL_NAME_SRL}_failures.txt", "a") as f:
+        f.write(f"\nStarting new test: {test_type}\n")
 
 
 if __name__ == "__main__":
@@ -347,43 +300,45 @@ if __name__ == "__main__":
     print("In this Python script, we will be evaluating three Semantic Role Labeling (SRL) models on different tests.")
 
 
-    print("\nRunning Test One: One Proposition -> Multiple Realizations")
+    print("\nRunning Test One: One verb Sentences")
+    write_test_start_message(MODEL_NAME_SRL, "One verb Sentences")
     srl1, bert1, group91 = test_one()
 
-    print("\nRunning Test Two: Statement vs. Question")
+    write_test_start_message(MODEL_NAME_SRL, "Spelling Errors")
+    print("\nRunning Test Two: Spelling Errors")
     srl2, bert2, group92 = test_two()
 
+    write_test_start_message(MODEL_NAME_SRL, "Active vs. Passive")
     print("\nRunning Test Three: Active vs. Passive")
     srl3, bert3, group93 = test_three()
 
-    print("\nRunning Test Four: Clefts")
+    write_test_start_message(MODEL_NAME_SRL, "Instruments")
+    print("\nRunning Test Four: Instruments")
     srl4, bert4, group94 = test_four()
 
-    print("\nRunning Test Five: Verb Alternations/Levin's classes")
+    write_test_start_message(MODEL_NAME_SRL, "Context")
+    print("\nRunning Test Five: Context")
     srl5, bert5, group95 = test_five()
 
-    print("\nRunning Test Six: Synonyms")
+    write_test_start_message(MODEL_NAME_SRL, "Slang")
+    print("\nRunning Test Six: Slang")
     srl6, bert6, group96 = test_six()
 
-    print("\nRunning Test Seven: Polysemy")
+    write_test_start_message(MODEL_NAME_SRL, "Long Distance")
+    print("\nRunning Test Seven: Long Distance")
     srl7, bert7, group97 = test_seven()
 
-    print("\nRunning Test Eight: Spelling Errors")
-    srl8, bert8, group98 = test_eight()
-
-    print("\nRunning Test Nine: Long Distance Dependencies")
-    srl9, bert9, group99 = test_nine()
 
     columnnames = ["Test Name", "SRL", "SRL BERT", "SRL Group 9"]
 
-    testnames = ["One Proposition -> Multiple Realizations", "Statement vs. Question", "Active vs. Passive", "Clefts", "Verb Alternations/Levin's classes", "Synonyms", "Polysemy", "Spelling Errors", "Long Distance Dependencies"]
-    srl = [srl1, srl2, srl3, srl4, srl5, srl6, srl7, srl8, srl9]
-    bert = [bert1, bert2, bert3, bert4, bert5, bert6, bert7, bert8, bert9]
-    group9 = [group91, group92, group93, group94, group95, group96, group97, group98, group99]
+    testnames = ["1", "2", "3", "4", "5", "6", "7"]
+    srl = [srl1, srl2, srl3, srl4, srl5, srl6, srl7]
+    bert = [bert1, bert2, bert3, bert4, bert5, bert6, bert7]
+    group9 = [group91, group92, group93, group94, group95, group96,  group97]
 
     df = pd.DataFrame(list(zip(testnames, srl, bert, group9)), columns=columnnames)
     df.to_csv("results.csv", index=False)
 
 
 
-    # print("Done")
+    print("Done")

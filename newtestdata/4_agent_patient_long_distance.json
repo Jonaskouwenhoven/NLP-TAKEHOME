@@ -1,0 +1,126 @@
+{
+  "test_type": "Recognize Agent and Patient in Long-distance Dependencies",
+  "test_category": "MFT",
+  "tests": [
+      {
+          "original_sentence": "The project, developed by the team of engineers who won the national competition, impressed the judges.",
+          "propbank_golden_labels": {
+              "V": "impressed",
+              "ARG0": "the team of engineers who won the national competition",
+              "ARG1": "the judges"
+          }
+      },
+      {
+          "original_sentence": "The book, written by the author who was inspired by her childhood experiences, became a bestseller.",
+          "propbank_golden_labels": {
+              "V": "became",
+              "ARG0": "the author who was inspired by her childhood experiences",
+              "ARG1": "a bestseller"
+          }
+      },
+      {
+          "original_sentence": "The flowers, nurtured by the gardener with great care, bloomed beautifully.",
+          "propbank_golden_labels": {
+              "V": "bloomed",
+              "ARG1": "The flowers",
+              "ARG0": "the gardener with great care"
+          }
+      },
+      {
+          "original_sentence": "The cake, baked by the chef who had years of experience, was the highlight of the party.",
+          "propbank_golden_labels": {
+              "V": "was",
+              "ARG0": "The cake",
+              "ARG1": "the highlight of the party"
+          }
+      },
+      {
+          "original_sentence": "The computer program, designed by a team of experts who had worked on similar projects, solved the problem efficiently.",
+          "propbank_golden_labels": {
+              "V": "solved",
+              "ARG0": "The computer program",
+              "ARG1": "the problem"
+          }
+      },
+      {
+        "original_sentence": "The concert, organized by the committee who had been planning for months, attracted a large audience.",
+        "propbank_golden_labels": {
+            "V": "attracted",
+            "ARG0": "The concert",
+            "ARG1": "a large audience"
+        }
+    },
+    {
+        "original_sentence": "The painting, created by the artist who had studied the old masters, sold for a high price.",
+        "propbank_golden_labels": {
+            "V": "sold",
+            "ARG0": "The painting",
+            "ARG1": "a high price"
+        }
+    },
+    {
+        "original_sentence": "The software, developed by the programmer who had previously worked on similar applications, increased productivity significantly.",
+        "propbank_golden_labels": {
+            "V": "increased",
+            "ARG0": "The software",
+            "ARG1": "productivity"
+        }
+    },
+    {
+        "original_sentence": "The presentation, delivered by the speaker who was an expert in the field, captivated the audience.",
+        "propbank_golden_labels": {
+            "V": "captivated",
+            "ARG0": "The presentation",
+            "ARG1": "the audience"
+        }
+    },
+    {
+        "original_sentence": "The bridge, designed by the renowned architect who had a unique vision, became a popular landmark.",
+        "propbank_golden_labels": {
+            "V": "became",
+            "ARG0": "The bridge",
+            "ARG1": "a popular landmark"
+        }
+    },
+    {
+      "original_sentence": "The statue, carved by the sculptor who had studied under a famous mentor, drew crowds of tourists.",
+      "propbank_golden_labels": {
+        "V": "drew",
+        "ARG0": "The statue",
+        "ARG1": "crowds of tourists"
+      }
+    },
+    {
+      "original_sentence": "The speech, given by the politician who had a reputation for honesty, convinced many undecided voters.",
+      "propbank_golden_labels": {
+        "V": "convinced",
+        "ARG0": "The speech",
+        "ARG1": "many undecided voters"
+      }
+    },
+    {
+      "original_sentence": "The article, written by the journalist who had uncovered several scandals, revealed new information about the case.",
+      "propbank_golden_labels": {
+        "V": "revealed",
+        "ARG0": "The article",
+        "ARG1": "new information about the case"
+      }
+    },
+    {
+      "original_sentence": "The experiment, conducted by the scientist who had a history of groundbreaking research, yielded surprising results.",
+      "propbank_golden_labels": {
+        "V": "yielded",
+        "ARG0": "The experiment",
+        "ARG1": "surprising results"
+      }
+    },
+    {
+      "original_sentence": "The play, directed by the award-winning director who had worked with famous actors, received rave reviews.",
+      "propbank_golden_labels": {
+        "V": "received",
+        "ARG0": "The play",
+        "ARG1": "rave reviews"
+      }
+    }
+  ]
+}

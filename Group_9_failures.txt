@@ -1,0 +1,107 @@
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {'ARG0': 'He', 'ARG1': 'to play basketball'}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {'ARG0': 'he', 'ARG1': 'me'}
+Gold Label: flaked, Predicted Label: on our plans, output: {'ARGM-EXT': 'totally', 'V': 'on our plans'}
+No 'V' label in output: {}
+No 'V' label in output: {}
+Gold Label: was, Predicted Label: lit, output: {'ARG1': 'That party', 'V': 'lit'}
+Gold Label: slayed, Predicted Label: that performance, output: {'ARG0': 'He', 'V': 'that performance'}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+
+Starting new test: One verb Sentences
+
+Starting new test: Spelling Errors
+Sentence: The boy ate an apple., No 'V' label in output: {}
+Sentence: She bought a red dress., No 'V' label in output: {}
+Sentence: He loves to play basketball., No 'V' label in output: {'ARG0': 'He', 'ARG1': 'to play basketball'}
+Sentence: The cat chased the mouse., No 'V' label in output: {}
+Sentence: The teacher graded the exams., No 'V' label in output: {}
+Sentence: The dog chased the cat., No 'V' label in output: {}
+Sentence: The man rode his bike to work., No 'V' label in output: {}
+Sentence: The boy kicked the ball., No 'V' label in output: {}
+Sentence: The woman cooked a delicious meal., No 'V' label in output: {}
+
+Starting new test: Active vs. Passive
+Model Group_9 failed to label the ARG1 argument in the sentence: The company is launching a new product..
+
+Model Group_9 failed to label the ARG1 argument in the sentence: A new product is being launched by the company..
+
+Model Group_9 failed to label the ARG1 argument in the sentence: The ball was kicked by the boy..
+
+Model Group_9 failed to label the ARG1 argument in the sentence: The teacher will give the students a quiz tomorrow..
+
+Model Group_9 failed to label the ARG1 argument in the sentence: The students will be given a quiz by the teacher tomorrow..
+
+Model Group_9 failed to label the ARGM_TMP argument in the sentence: The company produced a hit song last year..
+
+Model Group_9 failed to label the ARGM_TMP argument in the sentence: A hit song was produced by the company last year..
+
+Model Group_9 failed to label the ARGM_TMP argument in the sentence: The student completed the project in two weeks..
+
+Model Group_9 failed to label the ARGM_TMP argument in the sentence: The project was completed by the student in two weeks..
+
+Model Group_9 failed to label the ARGM_LOC argument in the sentence: The dog chased the cat out of the garden..
+
+Model Group_9 failed to label the ARG1 argument in the sentence: The cat was chased out of the garden by the dog..
+
+
+Starting new test: Instruments
+Model Group_9 failed on sentence: She cut the cake with a knife.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'cut', 'ARG1': 'the cake', 'ARGM-MNR': 'with a knife'}.
+Model Group_9 failed on sentence: He painted the wall with a brush.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'painted', 'ARG1': 'the wall', 'ARGM-MNR': 'with a brush'}.
+Model Group_9 failed on sentence: I opened the jar with a wrench.. No ARG2 label found in output: {'ARG0': 'I', 'V': 'opened', 'ARG1': 'the jar', 'ARGM-MNR': 'with a wrench'}.
+Model Group_9 failed on sentence: She wrote the letter with a pen.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'wrote', 'ARG1': 'the letter', 'ARGM-MNR': 'with a pen'}.
+Model Group_9 failed on sentence: He hammered the nail with a hammer.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'hammered', 'ARG1': 'the nail', 'ARGM-MNR': 'with a hammer'}.
+Model Group_9 failed on sentence: She mowed the lawn with a lawnmower.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'mowed', 'ARG1': 'with a lawnmower', 'ARGM-MNR': 'with a lawnmower'}.
+Model Group_9 failed on sentence: He cooked the food with a stove.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'cooked', 'ARG1': 'the food', 'ARGM-MNR': 'with a stove'}.
+Model Group_9 failed on sentence: She brewed the coffee with a coffee maker.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'brewed', 'ARG1': 'with a coffee maker', 'ARGM-MNR': 'with a coffee maker'}.
+Model Group_9 failed on sentence: She brushed her hair with a comb.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'brushed', 'ARG1': 'her hair', 'ARGM-MNR': 'with a comb'}.
+Model Group_9 failed on sentence: He cut the paper with scissors.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'cut', 'ARG1': 'the paper', 'ARGM-MNR': 'with scissors'}.
+Model Group_9 failed on sentence: She cooked the steak with a grill.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'cooked', 'ARG1': 'the steak', 'ARGM-MNR': 'with a grill'}.
+Model Group_9 failed on sentence: He dug a hole with a shovel.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'dug', 'ARG1': 'a hole'}.
+Model Group_9 failed on sentence: She sliced the bread with a knife.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'sliced', 'ARG1': 'the bread', 'ARGM-MNR': 'with a knife'}.
+
+Starting new test: Context
+Model Group_9 failed on sentence: They built the house with care.. No ARGM-MNR label found in output: {'ARG0': 'They', 'ARG1': 'the house', 'V': 'with care'}.
+Model Group_9 failed on sentence: She painted the picture with attention to detail.. No ARGM-MNR label found in output: {'ARG0': 'She', 'V': 'with attention to detail'}.
+Model Group_9 failed on sentence: The athlete trained with determination.. No ARGM-MNR label found in output: {'ARG0': 'The athlete', 'V': 'with determination'}.
+
+Starting new test: Slang
+Sentence: I can't believe he ghosted me., No 'V' label in output: {'ARG0': 'he', 'ARG1': 'me'}
+Sentence: He totally flaked on our plans., Gold Label: flaked, Predicted Label: on our plans, Output: {'ARGM-EXT': 'totally', 'V': 'on our plans'}
+Sentence: I gotta jet, see you later., No 'V' label in output: {}
+Sentence: I'm gonna bounce, catch you later., No 'V' label in output: {}
+Sentence: That party was lit!, Gold Label: was, Predicted Label: lit, Output: {'ARG1': 'That party', 'V': 'lit'}
+Sentence: He totally slayed that performance last night!, Gold Label: slayed, Predicted Label: that performance, Output: {'ARG0': 'He', 'V': 'that performance'}
+Sentence: I can't even with this traffic today., No 'V' label in output: {}
+Sentence: They're gonna bounce soon, so we better hurry., No 'V' label in output: {}
+Sentence: I'm gonna dip out early, catch you later., No 'V' label in output: {}
+Sentence: She's been ghosting me for weeks now., No 'V' label in output: {}
+Sentence: He chickened out of the challenge., No 'V' label in output: {}
+
+Starting new test: Long Distance
+Error: Failed to correctly identify agent in sentence 'The project, developed by the team of engineers who won the national competition, impressed the judges.'. Gold label: 'the judges'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The book, written by the author who was inspired by her childhood experiences, became a bestseller.'. Gold label: 'the author who was inspired by her childhood experiences'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The flowers, nurtured by the gardener with great care, bloomed beautifully.'. Gold label: 'the gardener with great care'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The cake, baked by the chef who had years of experience, was the highlight of the party.'. Gold label: 'the cake'. Predicted label: ''.
+Error: Failed to correctly identify agent in sentence 'The computer program, designed by a team of experts who had worked on similar projects, solved the problem efficiently.'. Gold label: 'the problem'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The concert, organized by the committee who had been planning for months, attracted a large audience.'. Gold label: 'the concert'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The painting, created by the artist who had studied the old masters, sold for a high price.'. Gold label: 'the painting'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The software, developed by the programmer who had previously worked on similar applications, increased productivity significantly.'. Gold label: 'the software'. Predicted label: ''.
+Error: Failed to correctly identify agent in sentence 'The presentation, delivered by the speaker who was an expert in the field, captivated the audience.'. Gold label: 'the audience'. Predicted label: ''.
+Error: Failed to correctly identify agent in sentence 'The bridge, designed by the renowned architect who had a unique vision, became a popular landmark.'. Gold label: 'a popular landmark'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The statue, carved by the sculptor who had studied under a famous mentor, drew crowds of tourists.'. Gold label: 'the statue'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The speech, given by the politician who had a reputation for honesty, convinced many undecided voters.'. Gold label: 'the speech'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The article, written by the journalist who had uncovered several scandals, revealed new information about the case.'. Gold label: 'the article'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The experiment, conducted by the scientist who had a history of groundbreaking research, yielded surprising results.'. Gold label: 'the experiment'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The play, directed by the award-winning director who had worked with famous actors, received rave reviews.'. Gold label: 'the play'. Predicted label: ''.

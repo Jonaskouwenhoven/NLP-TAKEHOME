@@ -1,0 +1,75 @@
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+No 'V' label in output: {}
+
+Starting new test: One verb Sentences
+
+Starting new test: Spelling Errors
+Sentence: The boy ate an apple., No 'V' label in output: {}
+Sentence: She bought a red dress., No 'V' label in output: {}
+Sentence: The cat chased the mouse., No 'V' label in output: {}
+Sentence: The teacher graded the exams., No 'V' label in output: {}
+Sentence: The dog chased the cat., No 'V' label in output: {}
+Sentence: The man rode his bike to work., No 'V' label in output: {}
+Sentence: The boy kicked the ball., No 'V' label in output: {}
+Sentence: The woman cooked a delicious meal., No 'V' label in output: {}
+
+Starting new test: Active vs. Passive
+Model SRL_BERT failed to label the ARG1 argument in the sentence: A new product is being launched by the company..
+
+Model SRL_BERT failed to label the ARGM_AGENT argument in the sentence: The ball was kicked by the boy..
+
+Model SRL_BERT failed to correctly label the ARG1 argument in the sentence: The teacher will give the students a quiz tomorrow..
+Expected value: the students.
+Actual value: a quiz.
+
+Model SRL_BERT failed to label the ARGM_TMP argument in the sentence: The students will be given a quiz by the teacher tomorrow..
+
+Model SRL_BERT failed to label the ARGM_TMP argument in the sentence: The company produced a hit song last year..
+
+Model SRL_BERT failed to label the ARGM_TMP argument in the sentence: A hit song was produced by the company last year..
+
+Model SRL_BERT failed to label the ARGM_TMP argument in the sentence: The student completed the project in two weeks..
+
+Model SRL_BERT failed to label the ARGM_TMP argument in the sentence: The project was completed by the student in two weeks..
+
+Model SRL_BERT failed to label the ARGM_LOC argument in the sentence: The dog chased the cat out of the garden..
+
+Model SRL_BERT failed to label the ARGM_LOC argument in the sentence: The cat was chased out of the garden by the dog..
+
+
+Starting new test: Instruments
+Model SRL_BERT failed on sentence: She cut the cake with a knife.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'cut', 'ARG1': 'the cake', 'ARG3': 'with a knife'}.
+Model SRL_BERT failed on sentence: He painted the wall with a brush.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'painted', 'ARG1': 'the wall', 'ARGM-MNR': 'with a brush'}.
+Model SRL_BERT failed on sentence: I opened the jar with a wrench.. No ARG2 label found in output: {'ARG0': 'I', 'V': 'opened', 'ARG1': 'the jar', 'ARGM-MNR': 'with a wrench'}.
+Model SRL_BERT failed on sentence: She wrote the letter with a pen.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'wrote', 'ARG1': 'the letter', 'ARGM-MNR': 'with a pen'}.
+Model SRL_BERT failed on sentence: She mowed the lawn with a lawnmower.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'mowed', 'ARG1': 'the lawn', 'ARGM-MNR': 'with a lawnmower'}.
+Model SRL_BERT failed on sentence: He cooked the food with a stove.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'cooked', 'ARG1': 'the food', 'ARGM-MNR': 'with a stove'}.
+Model SRL_BERT failed on sentence: She cleaned the dishes with a sponge.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'cleaned', 'ARG1': 'the dishes', 'ARGM-MNR': 'with a sponge'}.
+Model SRL_BERT failed on sentence: She brushed her hair with a comb.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'brushed', 'ARG1': 'her hair', 'ARG3': 'with a comb'}.
+Model SRL_BERT failed on sentence: He cut the paper with scissors.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'cut', 'ARG1': 'the paper', 'ARG3': 'with scissors'}.
+Model SRL_BERT failed on sentence: She cooked the steak with a grill.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'cooked', 'ARG1': 'the steak', 'ARGM-MNR': 'with a grill'}.
+Model SRL_BERT failed on sentence: He dug a hole with a shovel.. No ARG2 label found in output: {'ARG0': 'He', 'V': 'dug', 'ARG1': 'a hole', 'ARGM-MNR': 'with a shovel'}.
+Model SRL_BERT failed on sentence: She sliced the bread with a knife.. No ARG2 label found in output: {'ARG0': 'She', 'V': 'sliced', 'ARG1': 'the bread', 'ARG3': 'with a knife'}.
+
+Starting new test: Context
+
+Starting new test: Slang
+Sentence: I gotta jet, see you later., No 'V' label in output: {}
+Sentence: I can't even with this traffic today., No 'V' label in output: {}
+Sentence: He chickened out of the challenge., No 'V' label in output: {}
+
+Starting new test: Long Distance
+Error: Failed to correctly identify patient in sentence 'The book, written by the author who was inspired by her childhood experiences, became a bestseller.'. Gold label: 'the author who was inspired by her childhood experiences'. Predicted label: ''.
+Error: Failed to correctly identify agent in sentence 'The flowers, nurtured by the gardener with great care, bloomed beautifully.'. Gold label: 'the flowers'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The cake, baked by the chef who had years of experience, was the highlight of the party.'. Gold label: 'the cake'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The painting, created by the artist who had studied the old masters, sold for a high price.'. Gold label: 'the painting'. Predicted label: ''.
+Error: Failed to correctly identify patient in sentence 'The bridge, designed by the renowned architect who had a unique vision, became a popular landmark.'. Gold label: 'the bridge'. Predicted label: ''.

@@ -1,0 +1,126 @@
+{
+    "test_type": "Identifying instruments",
+    "test_category": "MFT",
+    "tests": [
+        {
+            "original_sentence": "She cut the cake with a knife.",
+            "propbank_golden_labels": {
+                "V": "cut",
+                "ARG1": "the cake",
+                "ARG2": "with a knife"
+            }
+        },
+        {
+            "original_sentence": "He painted the wall with a brush.",
+            "propbank_golden_labels": {
+                "V": "painted",
+                "ARG1": "the wall",
+                "ARG2": "with a brush"
+            }
+        },
+        {
+            "original_sentence": "I opened the jar with a wrench.",
+            "propbank_golden_labels": {
+                "V": "opened",
+                "ARG1": "the jar",
+                "ARG2": "with a wrench"
+            }
+        },
+        {
+            "original_sentence": "She wrote the letter with a pen.",
+            "propbank_golden_labels": {
+                "V": "wrote",
+                "ARG1": "the letter",
+                "ARG2": "with a pen"
+            }
+        },
+        {
+            "original_sentence": "He hammered the nail with a hammer.",
+            "propbank_golden_labels": {
+                "V": "hammered",
+                "ARG1": "the nail",
+                "ARG2": "with a hammer"
+            }
+        },
+        {
+            "original_sentence": "She mowed the lawn with a lawnmower.",
+            "propbank_golden_labels": {
+                "V": "mowed",
+                "ARG1": "the lawn",
+                "ARG2": "with a lawnmower"
+            }
+            },
+            {
+            "original_sentence": "He cooked the food with a stove.",
+            "propbank_golden_labels": {
+                "V": "cooked",
+                "ARG1": "the food",
+                "ARG2": "with a stove"
+            }
+            },
+            {
+            "original_sentence": "She cleaned the dishes with a sponge.",
+            "propbank_golden_labels": {
+                "V": "cleaned",
+                "ARG1": "the dishes",
+                "ARG2": "with a sponge"
+            }
+            },
+            {
+            "original_sentence": "He trimmed the hedges with a pair of shears.",
+            "propbank_golden_labels": {
+                "V": "trimmed",
+                "ARG1": "the hedges",
+                "ARG2": "with a pair of shears"
+            }
+            },
+            {
+            "original_sentence": "She brewed the coffee with a coffee maker.",
+            "propbank_golden_labels": {
+                "V": "brewed",
+                "ARG1": "the coffee",
+                "ARG2": "with a coffee maker"
+            }
+            },
+            {
+                "original_sentence": "She brushed her hair with a comb.",
+                "propbank_golden_labels": {
+                    "V": "brushed",
+                    "ARG1": "her hair",
+                    "ARG2": "with a comb"
+                }
+            },
+            {
+                "original_sentence": "He cut the paper with scissors.",
+                "propbank_golden_labels": {
+                    "V": "cut",
+                    "ARG1": "the paper",
+                    "ARG2": "with scissors"
+                }
+            },
+            {
+                "original_sentence": "She cooked the steak with a grill.",
+                "propbank_golden_labels": {
+                    "V": "cooked",
+                    "ARG1": "the steak",
+                    "ARG2": "with a grill"
+                }
+            },
+            {
+                "original_sentence": "He dug a hole with a shovel.",
+                "propbank_golden_labels": {
+                    "V": "dug",
+                    "ARG1": "a hole",
+                    "ARG2": "with a shovel"
+                }
+            },
+            {
+                "original_sentence": "She sliced the bread with a knife.",
+                "propbank_golden_labels": {
+                    "V": "sliced",
+                    "ARG1": "the bread",
+                    "ARG2": "with a knife"
+                }
+            }
+    ]
+}

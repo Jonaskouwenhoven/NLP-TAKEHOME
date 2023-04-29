@@ -1,0 +1,110 @@
+{
+    "test_type": "One Verb Sentences",
+    "test_category": "MFT",
+    "tests": [
+        {
+            "original_sentence": "Tom dances.",
+            "propbank_golden_labels": {
+                "V": "dances"
+            }
+        },
+        {
+            "original_sentence": "The wind blows.",
+            "propbank_golden_labels": {
+                "V": "blows"
+            }
+        },
+        {
+            "original_sentence": "The cat chased the mouse.",
+            "propbank_golden_labels": {
+                "V": "chased"
+            }
+        },
+        {
+            "original_sentence": "The boy ate an apple.",
+            "propbank_golden_labels": {
+                "V": "ate"
+            }
+        },
+        {
+            "original_sentence": "She bought a red dress.",
+            "propbank_golden_labels": {
+                "V": "bought"
+            }
+        },
+        {
+            "original_sentence": "The teacher graded the exams.",
+            "propbank_golden_labels": {
+                "V": "graded"
+            }
+        },
+
+        {
+            "original_sentence": "The rain poured down from the dark clouds above.",
+            "propbank_golden_labels": {
+                "V": "poured"
+            }
+        },
+        {
+            "original_sentence": "She sang a beautiful song.",
+            "propbank_golden_labels": {
+                "V": "sang"
+
+            }
+        },
+        {
+            "original_sentence": "The boy kicked the ball.",
+            "propbank_golden_labels": {
+                "V": "kicked"
+            }
+        },
+        {
+            "original_sentence": "The dog barked loudly at the mailman.",
+            "propbank_golden_labels": {
+                "V": "barked"
+            }
+        },
+        {
+            "original_sentence": "The dog barks.",
+            "propbank_golden_labels": {
+                "V": "barks"
+            }
+        },
+        {
+            "original_sentence": "The bird chirps.",
+            "propbank_golden_labels": {
+                "V": "chirps"
+            }
+        },
+        {
+            "original_sentence": "The phone rings.",
+            "propbank_golden_labels": {
+                "V": "rings"
+            }
+        },
+        {
+            "original_sentence": "The car honks.",
+            "propbank_golden_labels": {
+                "V": "honks"
+            }
+        },
+        {
+            "original_sentence": "The flowers bloom brightly in the spring.",
+            "propbank_golden_labels": {
+                "V": "bloom"
+            }
+        },
+        {
+            "original_sentence": "The chef prepares a delicious meal in the kitchen.",
+            "propbank_golden_labels": {
+                "V": "prepares"
+            }
+        },
+        {
+            "original_sentence": "The children play in the park after school.",
+            "propbank_golden_labels": {
+                "V": "play"
+            }
+        } 
+    ]
+}

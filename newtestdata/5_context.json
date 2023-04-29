@@ -1,0 +1,89 @@
+{
+    "test_type": "Ability to Identify Contextual Information",
+    "test_category": "MFT",
+    "tests": [
+        {
+        "original_sentence": "He typed the letter with speed.",
+        "propbank_golden_labels": {
+            "V": "typed",
+            "ARG1": "the letter",
+            "ARGM-MNR": "with speed"
+        }
+        },
+        {
+        "original_sentence": "She cooked the food with precision.",
+        "propbank_golden_labels": {
+            "V": "cooked",
+            "ARG1": "the food",
+            "ARGM-MNR": "with precision"
+        }
+        },
+        {
+        "original_sentence": "They built the house with care.",
+        "propbank_golden_labels": {
+            "V": "built",
+            "ARG1": "the house",
+            "ARGM-MNR": "with care"
+        }
+        },
+        {
+        "original_sentence": "She painted the picture with attention to detail.",
+        "propbank_golden_labels": {
+            "V": "painted",
+            "ARG1": "the picture",
+            "ARGM-MNR": "with attention to detail"
+        }
+        },
+        {
+        "original_sentence": "He drove the car with caution.",
+        "propbank_golden_labels": {
+            "V": "drove",
+            "ARG1": "the car",
+            "ARGM-MNR": "with caution"
+        }
+        },
+        {
+            "original_sentence": "The athlete trained with determination.",
+            "propbank_golden_labels": {
+                "V": "trained",
+                "ARG0": "The athlete",
+                "ARGM-MNR": "with determination"
+            }
+        },
+        {
+            "original_sentence": "The chef cut the onions with reluctance.",
+            "propbank_golden_labels": {
+                "V": "cut",
+                "ARG1": "the onions",
+                "ARG0": "The chef",
+                "ARGM-MNR": "with reluctance"
+            }
+        },
+        {
+            "original_sentence": "The cat climbed the tree with stealth.",
+            "propbank_golden_labels": {
+                "V": "climbed",
+                "ARG0": "The cat",
+                "ARG1": "the tree",
+                "ARGM-MNR": "with stealth"
+            }
+        },
+        {
+            "original_sentence": "She danced with grace.",
+            "propbank_golden_labels": {
+                "V": "danced",
+                "ARG1": "She",
+                "ARGM-MNR": "with grace"
+            }
+        },
+        {
+            "original_sentence": "He wrote the report with diligence.",
+            "propbank_golden_labels": {
+                "V": "wrote",
+                "ARG1": "the report",
+                "ARGM-MNR": "with diligence"
+            }
+        }
+
+    ]
+    }
