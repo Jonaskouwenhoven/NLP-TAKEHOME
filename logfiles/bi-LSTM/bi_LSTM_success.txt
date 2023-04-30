@@ -1,0 +1,239 @@
+
+Starting new test: One Verb Sentences
+
+Success: Correctly identified predicate in sentence 'The wind blows.'. Gold Data: '{'V': 'blows'}'. Predicted label: '{'ARG1': 'The wind', 'V': 'blows'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The cat chased the mouse.'. Gold Data: '{'V': 'chased'}'. Predicted label: '{'ARG0': 'The cat', 'V': 'chased', 'ARG1': 'the mouse'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The boy ate an apple.'. Gold Data: '{'V': 'ate'}'. Predicted label: '{'ARG0': 'The boy', 'V': 'ate', 'ARG1': 'an apple'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She bought a red dress.'. Gold Data: '{'V': 'bought'}'. Predicted label: '{'ARG0': 'She', 'V': 'bought', 'ARG1': 'a red dress'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The teacher graded the exams.'. Gold Data: '{'V': 'graded'}'. Predicted label: '{'ARG0': 'The teacher', 'V': 'graded', 'ARG1': 'the exams'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The rain poured down from the dark clouds above.'. Gold Data: '{'V': 'poured'}'. Predicted label: '{'ARG1': 'The rain', 'V': 'poured', 'ARGM-DIR': 'down', 'ARG2': 'from the dark clouds above'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She sang a beautiful song.'. Gold Data: '{'V': 'sang'}'. Predicted label: '{'ARG0': 'She', 'V': 'sang', 'ARG1': 'a beautiful song'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The boy kicked the ball.'. Gold Data: '{'V': 'kicked'}'. Predicted label: '{'ARG0': 'The boy', 'V': 'kicked', 'ARG1': 'the ball'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The dog barked loudly at the mailman.'. Gold Data: '{'V': 'barked'}'. Predicted label: '{'ARG0': 'The dog', 'V': 'barked', 'ARGM-MNR': 'loudly', 'ARGM-LOC': 'at the mailman'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The car honks.'. Gold Data: '{'V': 'honks'}'. Predicted label: '{'ARG0': 'The car', 'V': 'honks'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The flowers bloom brightly in the spring.'. Gold Data: '{'V': 'bloom'}'. Predicted label: '{'ARG1': 'The flowers', 'V': 'bloom', 'ARGM-MNR': 'brightly', 'ARGM-TMP': 'in the spring'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The chef prepares a delicious meal in the kitchen.'. Gold Data: '{'V': 'prepares'}'. Predicted label: '{'ARG0': 'The chef', 'V': 'prepares', 'ARG1': 'a delicious meal', 'ARGM-LOC': 'in the kitchen'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The children play in the park after school.'. Gold Data: '{'V': 'play'}'. Predicted label: '{'ARG0': 'The children', 'V': 'play', 'ARGM-LOC': 'in the park', 'ARGM-TMP': 'after school'}'.
+----------------------------------------
+
+Starting new test: Spelling Errors
+
+Success: Correctly identified predicate in sentence 'The wind bows.'. Gold Data: '{'V': 'bows'}'. Predicted label: '{'ARG1': 'The wind', 'V': 'bows'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She boght a red dress.'. Gold Data: '{'V': 'boght'}'. Predicted label: '{'ARG0': 'She', 'V': 'boght', 'ARG1': 'a red dress'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The teacher grad the exams.'. Gold Data: '{'V': 'grad'}'. Predicted label: '{'ARG0': 'The teacher', 'V': 'grad', 'ARG1': 'the exams'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The rain poued down from the dark clouds above.'. Gold Data: '{'V': 'poued'}'. Predicted label: '{'ARG0': 'The rain', 'V': 'poued', 'ARGM-DIR': 'from the dark clouds above'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She sang a beautiful song.'. Gold Data: '{'V': 'sang'}'. Predicted label: '{'ARG0': 'She', 'V': 'sang', 'ARG1': 'a beautiful song'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The boy kickd the ball.'. Gold Data: '{'V': 'kickd'}'. Predicted label: '{'ARG0': 'The boy', 'V': 'kickd', 'ARG1': 'the ball'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The flowers bloem brightly in the spring.'. Gold Data: '{'V': 'bloem'}'. Predicted label: '{'ARG0': 'The flowers', 'V': 'bloem', 'ARGM-MNR': 'brightly', 'ARGM-TMP': 'in the spring'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The chef prepoars a delicious meal in the kitchen.'. Gold Data: '{'V': 'prepoars'}'. Predicted label: '{'ARG0': 'The chef', 'V': 'prepoars', 'ARG1': 'a delicious meal in the kitchen'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The children plee in the park after school.'. Gold Data: '{'V': 'plee'}'. Predicted label: '{'ARG0': 'The children', 'V': 'plee', 'ARGM-LOC': 'in the park', 'ARGM-TMP': 'after school'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The project, developd by the team of engineers who won the national competition, imprezzed the judges.'. Gold Data: '{'V': 'imprezzed'}'. Predicted label: '{'ARG0': 'The project', 'ARGM-PRD': 'developd by the team of engineers who', 'V': 'imprezzed', 'ARG1': 'the judges'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The book, written by the author who was inspired by her childhood experiences, bcame a bestseller.'. Gold Data: '{'V': 'bcame'}'. Predicted label: '{'ARG0': 'The book , written by the author who was inspired by her childhood experiences', 'V': 'bcame', 'ARG1': 'a bestseller'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She cout the cake with a knife.'. Gold Data: '{'V': 'cout'}'. Predicted label: '{'ARG0': 'She', 'V': 'cout', 'ARG1': 'the cake', 'ARGM-MNR': 'with a knife'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He pinted the wall with a brush.'. Gold Data: '{'V': 'pinted'}'. Predicted label: '{'ARG0': 'He', 'V': 'pinted', 'ARG1': 'the wall', 'ARGM-MNR': 'with a brush'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She danst with grace.'. Gold Data: '{'V': 'danst'}'. Predicted label: '{'ARG2': 'She', 'V': 'danst', 'ARGM-MNR': 'with grace'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He wrooot the report with diligence.'. Gold Data: '{'V': 'wrooot'}'. Predicted label: '{'ARG0': 'He', 'V': 'wrooot', 'ARG1': 'the report', 'ARGM-MNR': 'with diligence'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The student compleetet the project in two weeks.'. Gold Data: '{'V': 'compleetet'}'. Predicted label: '{'ARG0': 'The student', 'V': 'compleetet', 'ARG2': 'the project', 'ARGM-TMP': 'in two weeks'}'.
+----------------------------------------
+
+Starting new test: Active vs. Passive
+
+Success: Correctly identified predicate in sentence 'The chef cooked the meal.'. Gold Data: '{'ARG0': 'the chef', 'ARG1': 'the meal'}'. Predicted label: '{'ARG0': 'The chef', 'V': 'cooked', 'ARG1': 'the meal'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The meal was cooked by the chef.'. Gold Data: '{'ARG1': 'the meal', 'ARG0': 'by the chef'}'. Predicted label: '{'ARG1': 'The meal', 'V': 'cooked', 'ARG0': 'by the chef'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The teacher graded the exams.'. Gold Data: '{'ARG0': 'the teacher', 'ARG1': 'the exams'}'. Predicted label: '{'ARG0': 'The teacher', 'V': 'graded', 'ARG1': 'the exams'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The company is launching a new product.'. Gold Data: '{'ARG0': 'the company', 'ARG1': 'a new product'}'. Predicted label: '{'ARG0': 'The company', 'V': 'launching', 'ARG1': 'a new product'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The boy kicked the ball.'. Gold Data: '{'ARG0': 'the boy', 'ARG1': 'the ball'}'. Predicted label: '{'ARG0': 'The boy', 'V': 'kicked', 'ARG1': 'the ball'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The ball was kicked by the boy.'. Gold Data: '{'ARG1': 'the ball', 'ARG0': 'by the boy'}'. Predicted label: '{'ARG1': 'The ball', 'V': 'kicked', 'ARG0': 'by the boy'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The artist painted a beautiful landscape.'. Gold Data: '{'ARG0': 'the artist', 'ARG1': 'a beautiful landscape'}'. Predicted label: '{'ARG0': 'The artist', 'V': 'painted', 'ARG1': 'a beautiful landscape'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'A beautiful landscape was painted by the artist.'. Gold Data: '{'ARG1': 'a beautiful landscape', 'ARG0': 'by the artist'}'. Predicted label: '{'ARG1': 'A beautiful landscape', 'V': 'painted', 'ARG0': 'by the artist'}'.
+----------------------------------------
+
+Starting new test: Instruments
+
+Success: Correctly identified predicate in sentence 'He painted the wall with a brush.'. Gold Data: '{'ARG2': 'with a brush'}'. Predicted label: '{'ARG0': 'He', 'V': 'painted', 'ARG1': 'the wall', 'ARG2': 'with a brush'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'I opened the jar with a wrench.'. Gold Data: '{'ARG2': 'with a wrench'}'. Predicted label: '{'ARG0': 'I', 'V': 'opened', 'ARG1': 'the jar', 'ARG2': 'with a wrench'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He hammered the nail with a hammer.'. Gold Data: '{'ARG2': 'with a hammer'}'. Predicted label: '{'ARG0': 'He', 'V': 'hammered', 'ARG1': 'the nail', 'ARG2': 'with a hammer'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She mowed the lawn with a lawnmower.'. Gold Data: '{'ARG2': 'with a lawnmower'}'. Predicted label: '{'ARG0': 'She', 'V': 'mowed', 'ARG1': 'the lawn', 'ARG2': 'with a lawnmower'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She cleaned the dishes with a sponge.'. Gold Data: '{'ARG2': 'with a sponge'}'. Predicted label: '{'ARG0': 'She', 'V': 'cleaned', 'ARG1': 'the dishes', 'ARG2': 'with a sponge'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He trimmed the hedges with a pair of shears.'. Gold Data: '{'ARG2': 'with a pair of shears'}'. Predicted label: '{'ARG0': 'He', 'V': 'trimmed', 'ARG1': 'the hedges', 'ARG2': 'with a pair of shears'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She brewed the coffee with a coffee maker.'. Gold Data: '{'ARG2': 'with a coffee maker'}'. Predicted label: '{'ARG0': 'She', 'V': 'brewed', 'ARG1': 'the coffee', 'ARG2': 'with a coffee maker'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She brushed her hair with a comb.'. Gold Data: '{'ARG2': 'with a comb'}'. Predicted label: '{'ARG0': 'She', 'V': 'brushed', 'ARG1': 'her hair', 'ARG2': 'with a comb'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He cut the paper with scissors.'. Gold Data: '{'ARG2': 'with scissors'}'. Predicted label: '{'ARG0': 'He', 'V': 'cut', 'ARG1': 'the paper', 'ARG2': 'with scissors'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She cooked the steak with a grill.'. Gold Data: '{'ARG2': 'with a grill'}'. Predicted label: '{'ARG0': 'She', 'V': 'cooked', 'ARG1': 'the steak', 'ARG2': 'with a grill'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He dug a hole with a shovel.'. Gold Data: '{'ARG2': 'with a shovel'}'. Predicted label: '{'ARG0': 'He', 'V': 'dug', 'ARG1': 'a hole', 'ARG2': 'with a shovel'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She sliced the bread with a knife.'. Gold Data: '{'ARG2': 'with a knife'}'. Predicted label: '{'ARG0': 'She', 'V': 'sliced', 'ARG1': 'the bread', 'ARG2': 'with a knife'}'.
+----------------------------------------
+
+Starting new test: Contexts
+
+Success: Correctly identified predicate in sentence 'He typed the letter with speed.'. Gold Data: '{'ARGM-MNR': 'with speed'}'. Predicted label: '{'ARG0': 'He', 'V': 'typed', 'ARG1': 'the letter', 'ARGM-MNR': 'with speed'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She cooked the food with precision.'. Gold Data: '{'ARGM-MNR': 'with precision'}'. Predicted label: '{'ARG0': 'She', 'V': 'cooked', 'ARG1': 'the food', 'ARGM-MNR': 'with precision'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The chef cut the onions with reluctance.'. Gold Data: '{'ARGM-MNR': 'with reluctance'}'. Predicted label: '{'ARG0': 'The chef', 'V': 'cut', 'ARG1': 'the onions', 'ARGM-MNR': 'with reluctance'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The cat climbed the tree with stealth.'. Gold Data: '{'ARGM-MNR': 'with stealth'}'. Predicted label: '{'ARG0': 'The cat', 'V': 'climbed', 'ARG1': 'the tree', 'ARGM-MNR': 'with stealth'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He wrote the report with diligence.'. Gold Data: '{'ARGM-MNR': 'with diligence'}'. Predicted label: '{'ARG0': 'He', 'V': 'wrote', 'ARG1': 'the report', 'ARGM-MNR': 'with diligence'}'.
+----------------------------------------
+
+Starting new test: Slang
+
+Success: Correctly identified predicate in sentence 'I can't believe he ghosted me.'. Gold Data: '{'V': 'ghosted'}'. Predicted label: '{'ARG0': 'he', 'V': 'ghosted', 'ARG1': 'me'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He totally flaked on our plans.'. Gold Data: '{'V': 'flaked'}'. Predicted label: '{'ARG0': 'He', 'ARGM-MNR': 'totally', 'V': 'flaked', 'ARG1': 'on our plans'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'I'm gonna bounce.'. Gold Data: '{'V': 'bounce'}'. Predicted label: '{'ARG1': 'I', 'V': 'bounce'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'That party was lit!'. Gold Data: '{'V': 'was'}'. Predicted label: '{'V': 'was'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He totally slayed that performance last night!'. Gold Data: '{'V': 'slayed'}'. Predicted label: '{'ARG0': 'He', 'ARGM-MNR': 'totally', 'V': 'slayed', 'ARG1': 'that performance', 'ARGM-TMP': 'last night'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'They're gonna bounce soon, so we better hurry.'. Gold Data: '{'V': 'bounce'}'. Predicted label: '{'ARG0': 'They', 'ARGM-DIS': 'gon na', 'V': 'bounce', 'ARGM-TMP': 'soon'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'I'm gonna dip out early tonight.'. Gold Data: '{'V': 'dip'}'. Predicted label: '{'ARG1': 'I', 'V': 'dip', 'ARGM-TMP': 'early tonight'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She's been ghosting me for weeks now.'. Gold Data: '{'V': 'ghosting'}'. Predicted label: '{'ARG0': 'She', 'V': 'ghosting', 'ARG1': 'me', 'ARGM-TMP': 'for weeks now'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He flexed on his ex.'. Gold Data: '{'V': 'flexed'}'. Predicted label: '{'ARG0': 'He', 'V': 'flexed', 'ARG1': 'on his ex'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'She bailed on me at the last minute.'. Gold Data: '{'V': 'bailed'}'. Predicted label: '{'ARG0': 'She', 'V': 'bailed', 'ARG1': 'on me', 'ARGM-TMP': 'at the last minute'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'He chickened out of the challenge.'. Gold Data: '{'V': 'chickened'}'. Predicted label: '{'ARG0': 'He', 'V': 'chickened', 'ARG1': 'of the challenge'}'.
+----------------------------------------
+
+Starting new test: Long Distance
+
+Success: Correctly identified predicate in sentence 'The project, developed by the team of engineers who won the national competition, impressed the judges.'. Gold Data: '{'ARG0': 'the team of engineers who won the national competition', 'ARG1': 'the judges'}'. Predicted label: '{'ARG0': 'The project , developed by the team of engineers who won the national competition ,', 'V': 'impressed', 'ARG1': 'the judges'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The computer program, designed by a team of experts who had worked on similar projects, solved the problem efficiently.'. Gold Data: '{'ARG0': 'The computer program', 'ARG1': 'the problem'}'. Predicted label: '{'ARG0': 'The computer program , designed by a team of experts who had worked on similar projects', 'V': 'solved', 'ARG1': 'the problem', 'ARGM-MNR': 'efficiently'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The concert, organized by the committee who had been planning for months, attracted a large audience.'. Gold Data: '{'ARG0': 'The concert', 'ARG1': 'a large audience'}'. Predicted label: '{'ARG0': 'The concert , organized by the committee who had been planning for months', 'V': 'attracted', 'ARG1': 'a large audience'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The software, developed by the programmer who had previously worked on similar applications, increased productivity significantly.'. Gold Data: '{'ARG0': 'The software', 'ARG1': 'productivity'}'. Predicted label: '{'ARG0': 'The software , developed by the programmer who had previously worked on similar applications', 'V': 'increased', 'ARG1': 'productivity', 'ARGM-MNR': 'significantly'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The presentation, delivered by the speaker who was an expert in the field, captivated the audience.'. Gold Data: '{'ARG0': 'The presentation', 'ARG1': 'the audience'}'. Predicted label: '{'ARG0': 'The presentation , delivered by the speaker who was an expert in the field ,', 'V': 'captivated', 'ARG1': 'the audience'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The statue, carved by the sculptor who had studied under a famous mentor, drew crowds of tourists.'. Gold Data: '{'ARG0': 'The statue', 'ARG1': 'crowds of tourists'}'. Predicted label: '{'ARG0': 'The statue , carved by the sculptor who had studied under a famous mentor', 'V': 'drew', 'ARG1': 'crowds of tourists'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The speech, given by the politician who had a reputation for honesty, convinced many undecided voters.'. Gold Data: '{'ARG0': 'The speech', 'ARG1': 'many undecided voters'}'. Predicted label: '{'ARG0': 'The speech , given by the politician who had a reputation for honesty ,', 'V': 'convinced', 'ARG1': 'many undecided voters'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The article, written by the journalist who had uncovered several scandals, revealed new information about the case.'. Gold Data: '{'ARG0': 'The article', 'ARG1': 'new information about the case'}'. Predicted label: '{'ARG0': 'The article , written by the journalist who had uncovered several scandals ,', 'V': 'revealed', 'ARG1': 'new information about the case'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The experiment, conducted by the scientist who had a history of groundbreaking research, yielded surprising results.'. Gold Data: '{'ARG0': 'The experiment', 'ARG1': 'surprising results'}'. Predicted label: '{'ARG0': 'The experiment , conducted by the scientist who had a history of groundbreaking research ,', 'V': 'yielded', 'ARG1': 'surprising results'}'.
+----------------------------------------
+
+Success: Correctly identified predicate in sentence 'The play, directed by the award-winning director who had worked with famous actors, received rave reviews.'. Gold Data: '{'ARG0': 'The play', 'ARG1': 'rave reviews'}'. Predicted label: '{'ARG0': 'The play , directed by the award - winning director who had worked with famous actors ,', 'V': 'received', 'ARG1': 'rave reviews'}'.
+----------------------------------------

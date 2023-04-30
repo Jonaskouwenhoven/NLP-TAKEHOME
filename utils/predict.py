@@ -2,7 +2,7 @@ import pandas as pd
 import os
 import pandas as pd
 from allennlp_models import pretrained
-from group9_SRL import predict_total
+from utils.group9_SRL import predict_total
 import re
 import string as string_value
 allen_models = ["structured-prediction-srl-bert", 'structured-prediction-srl']

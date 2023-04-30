@@ -41,13 +41,16 @@ Error: Failed to correctly identify no_predicate in sentence 'The car hnks.'. Go
 
 Starting new test: Active vs. Passive
 
+Error: Failed to correctly identify argument_missing in sentence 'The exams were graded by the teacher.'. Gold Data: '{'ARG1': 'the exams', 'ARG0': 'by the teacher'}'. Predicted label: '{'ARG2': 'The exams', 'V': 'graded', 'ARG0': 'by the teacher'}'.
+----------------------------------------
+
 Error: Failed to correctly identify argument_missing in sentence 'A new product is being launched by the company.'. Gold Data: '{'ARG1': 'a new product', 'ARG0': 'by the company'}'. Predicted label: '{}'.
 ----------------------------------------
 
 Error: Failed to correctly identify argument_missing in sentence 'The teacher will give the students a quiz tomorrow.'. Gold Data: '{'ARG0': 'the teacher', 'ARG2': 'the students', 'ARG1': 'a quiz', 'ARGM_TMP': 'tomorrow', 'ARGM_MOD': 'Will'}'. Predicted label: '{'ARG0': 'The teacher', 'ARGM-MOD': 'will', 'V': 'give', 'ARG2': 'the students', 'ARG1': 'a quiz', 'ARGM-TMP': 'tomorrow'}'.
 ----------------------------------------
 
-Error: Failed to correctly identify argument_missing in sentence 'The students will be given a quiz by the teacher tomorrow.'. Gold Data: '{'ARG1': 'a quiz', 'ARG2': 'the students', 'ARG0': 'by the teacher', 'ARGM_TMP': 'tomorrow', 'ARGM_MOD': 'Will'}'. Predicted label: '{'ARG2': 'The students', 'ARGM-MOD': 'will', 'V': 'given', 'ARG1': 'a quiz', 'ARG0': 'by the teacher', 'ARGM-TMP': 'tomorrow'}'.
+Error: Failed to correctly identify argument_mismatch in sentence 'The students will be given a quiz by the teacher tomorrow.'. Gold Data: '{'ARG1': 'a quiz', 'ARG2': 'the students', 'ARG0': 'by the teacher', 'ARGM_TMP': 'tomorrow', 'ARGM_MOD': 'Will'}'. Predicted label: '{'ARG2': 'The students', 'ARGM-MOD': 'will', 'V': 'given', 'ARG1': 'a quiz by the teacher', 'ARGM-TMP': 'tomorrow'}'.
 ----------------------------------------
 
 Error: Failed to correctly identify argument_missing in sentence 'The company produced a hit song last year.'. Gold Data: '{'ARG0': 'the company', 'ARG1': 'a hit song', 'ARGM_TMP': 'last year'}'. Predicted label: '{'ARG0': 'The company', 'V': 'produced', 'ARG1': 'a hit song', 'ARGM-TMP': 'last year'}'.
@@ -70,43 +73,31 @@ Error: Failed to correctly identify argument_missing in sentence 'The cat was ch
 
 Starting new test: Instruments
 
-Error: Failed to correctly identify ARG2_missing in sentence 'She cut the cake with a knife.'. Gold Data: '{'ARG2': 'with a knife'}'. Predicted label: '{'ARG0': 'She', 'V': 'cut', 'ARG1': 'the cake', 'ARG3': 'with a knife'}'.
-----------------------------------------
-
-Error: Failed to correctly identify ARG2_missing in sentence 'He painted the wall with a brush.'. Gold Data: '{'ARG2': 'with a brush'}'. Predicted label: '{'ARG0': 'He', 'V': 'painted', 'ARG1': 'the wall', 'ARGM-MNR': 'with a brush'}'.
-----------------------------------------
-
-Error: Failed to correctly identify ARG2_missing in sentence 'I opened the jar with a wrench.'. Gold Data: '{'ARG2': 'with a wrench'}'. Predicted label: '{'ARG0': 'I', 'V': 'opened', 'ARG1': 'the jar', 'ARGM-MNR': 'with a wrench'}'.
+Error: Failed to correctly identify ARG2_missing in sentence 'She cut the cake with a knife.'. Gold Data: '{'ARG2': 'with a knife'}'. Predicted label: '{'ARG0': 'She', 'V': 'cut', 'ARG1': 'the cake', 'ARGM-MNR': 'with a knife'}'.
 ----------------------------------------
 
 Error: Failed to correctly identify ARG2_missing in sentence 'She wrote the letter with a pen.'. Gold Data: '{'ARG2': 'with a pen'}'. Predicted label: '{'ARG0': 'She', 'V': 'wrote', 'ARG1': 'the letter', 'ARGM-MNR': 'with a pen'}'.
 ----------------------------------------
 
-Error: Failed to correctly identify ARG2_missing in sentence 'She mowed the lawn with a lawnmower.'. Gold Data: '{'ARG2': 'with a lawnmower'}'. Predicted label: '{'ARG0': 'She', 'V': 'mowed', 'ARG1': 'the lawn', 'ARGM-MNR': 'with a lawnmower'}'.
-----------------------------------------
-
 Error: Failed to correctly identify ARG2_missing in sentence 'He cooked the food with a stove.'. Gold Data: '{'ARG2': 'with a stove'}'. Predicted label: '{'ARG0': 'He', 'V': 'cooked', 'ARG1': 'the food', 'ARGM-MNR': 'with a stove'}'.
 ----------------------------------------
 
-Error: Failed to correctly identify ARG2_missing in sentence 'She cleaned the dishes with a sponge.'. Gold Data: '{'ARG2': 'with a sponge'}'. Predicted label: '{'ARG0': 'She', 'V': 'cleaned', 'ARG1': 'the dishes', 'ARGM-MNR': 'with a sponge'}'.
-----------------------------------------
-
-Error: Failed to correctly identify ARG2_missing in sentence 'She brushed her hair with a comb.'. Gold Data: '{'ARG2': 'with a comb'}'. Predicted label: '{'ARG0': 'She', 'V': 'brushed', 'ARG1': 'her hair', 'ARG3': 'with a comb'}'.
-----------------------------------------
-
-Error: Failed to correctly identify ARG2_missing in sentence 'He cut the paper with scissors.'. Gold Data: '{'ARG2': 'with scissors'}'. Predicted label: '{'ARG0': 'He', 'V': 'cut', 'ARG1': 'the paper', 'ARG3': 'with scissors'}'.
-----------------------------------------
-
-Error: Failed to correctly identify ARG2_missing in sentence 'She cooked the steak with a grill.'. Gold Data: '{'ARG2': 'with a grill'}'. Predicted label: '{'ARG0': 'She', 'V': 'cooked', 'ARG1': 'the steak', 'ARGM-MNR': 'with a grill'}'.
-----------------------------------------
-
-Error: Failed to correctly identify ARG2_missing in sentence 'He dug a hole with a shovel.'. Gold Data: '{'ARG2': 'with a shovel'}'. Predicted label: '{'ARG0': 'He', 'V': 'dug', 'ARG1': 'a hole', 'ARGM-MNR': 'with a shovel'}'.
-----------------------------------------
-
-Error: Failed to correctly identify ARG2_missing in sentence 'She sliced the bread with a knife.'. Gold Data: '{'ARG2': 'with a knife'}'. Predicted label: '{'ARG0': 'She', 'V': 'sliced', 'ARG1': 'the bread', 'ARG3': 'with a knife'}'.
-----------------------------------------
-
 Starting new test: Contexts
+
+Error: Failed to correctly identify ARGM-MNR_missing in sentence 'They built the house with care.'. Gold Data: '{'ARGM-MNR': 'with care'}'. Predicted label: '{'ARG0': 'They', 'V': 'built', 'ARG1': 'the house', 'ARG2': 'with care'}'.
+----------------------------------------
+
+Error: Failed to correctly identify ARGM-MNR_mismatch in sentence 'She painted the picture with attention to detail.'. Gold Data: '{'ARGM-MNR': 'with attention to detail'}'. Predicted label: '{'ARG0': 'She', 'V': 'painted', 'ARG1': 'the picture', 'ARG2': 'with attention', 'ARGM-MNR': 'to detail'}'.
+----------------------------------------
+
+Error: Failed to correctly identify ARGM-MNR_missing in sentence 'He drove the car with caution.'. Gold Data: '{'ARGM-MNR': 'with caution'}'. Predicted label: '{'ARG0': 'He', 'V': 'drove', 'ARG1': 'the car', 'ARG2': 'with caution'}'.
+----------------------------------------
+
+Error: Failed to correctly identify ARGM-MNR_missing in sentence 'The athlete trained with determination.'. Gold Data: '{'ARGM-MNR': 'with determination'}'. Predicted label: '{'ARG0': 'The athlete', 'V': 'trained', 'ARG2': 'with determination'}'.
+----------------------------------------
+
+Error: Failed to correctly identify ARGM-MNR_missing in sentence 'She danced with grace.'. Gold Data: '{'ARGM-MNR': 'with grace'}'. Predicted label: '{'ARG0': 'She', 'V': 'danced', 'ARG2': 'with grace'}'.
+----------------------------------------
 
 Starting new test: Slang
 
@@ -118,17 +109,17 @@ Error: Failed to correctly identify no_predicate in sentence 'I can't even with 
 
 Starting new test: Long Distance
 
-Error: Failed to correctly identify patient in sentence 'The book, written by the author who was inspired by her childhood experiences, became a bestseller.'. Gold Data: '{'ARG0': 'the author who was inspired by her childhood experiences', 'ARG1': 'a bestseller'}'. Predicted label: '{'ARG1': 'The book , written by the author who was inspired by her childhood experiences', 'V': 'became', 'ARG2': 'a bestseller'}'.
+Error: Failed to correctly identify patient in sentence 'The book, written by the author who was inspired by her childhood experiences, became a bestseller.'. Gold Data: '{'ARG0': 'the author who was inspired by her childhood experiences', 'ARG1': 'a bestseller'}'. Predicted label: '{'ARG1': 'The book , written by the author who was inspired by her childhood experiences ,', 'V': 'became', 'ARG2': 'a bestseller'}'.
 ----------------------------------------
 
-Error: Failed to correctly identify agent in sentence 'The flowers, nurtured by the gardener with great care, bloomed beautifully.'. Gold Data: '{'ARG1': 'The flowers', 'ARG0': 'the gardener with great care'}'. Predicted label: '{'ARG0': 'The flowers , nurtured by the gardener with great care', 'V': 'bloomed', 'ARGM-MNR': 'beautifully'}'.
+Error: Failed to correctly identify patient in sentence 'The flowers, nurtured by the gardener with great care, bloomed beautifully.'. Gold Data: '{'ARG1': 'The flowers', 'ARG0': 'the gardener with great care'}'. Predicted label: '{'ARG1': 'The flowers , nurtured by the gardener with great care', 'V': 'bloomed', 'ARGM-MNR': 'beautifully'}'.
 ----------------------------------------
 
-Error: Failed to correctly identify patient in sentence 'The cake, baked by the chef who had years of experience, was the highlight of the party.'. Gold Data: '{'ARG0': 'The cake', 'ARG1': 'the highlight of the party'}'. Predicted label: '{'ARG1': 'The cake , baked by the chef who had years of experience ,', 'V': 'was', 'ARG2': 'the highlight of the party'}'.
+Error: Failed to correctly identify patient in sentence 'The cake, baked by the chef who had years of experience, was the highlight of the party.'. Gold Data: '{'ARG0': 'The cake', 'ARG1': 'the highlight of the party'}'. Predicted label: '{'ARG1': 'The cake , baked by the chef who had years of experience', 'V': 'was', 'ARG2': 'the highlight of the party'}'.
 ----------------------------------------
 
 Error: Failed to correctly identify patient in sentence 'The painting, created by the artist who had studied the old masters, sold for a high price.'. Gold Data: '{'ARG0': 'The painting', 'ARG1': 'a high price'}'. Predicted label: '{'ARG1': 'The painting , created by the artist who had studied the old masters', 'V': 'sold', 'ARG3': 'for a high price'}'.
 ----------------------------------------
 
-Error: Failed to correctly identify patient in sentence 'The bridge, designed by the renowned architect who had a unique vision, became a popular landmark.'. Gold Data: '{'ARG0': 'The bridge', 'ARG1': 'a popular landmark'}'. Predicted label: '{'ARG1': 'The bridge , designed by the renowned architect who had a unique vision', 'V': 'became', 'ARG2': 'a popular landmark'}'.
+Error: Failed to correctly identify patient in sentence 'The bridge, designed by the renowned architect who had a unique vision, became a popular landmark.'. Gold Data: '{'ARG0': 'The bridge', 'ARG1': 'a popular landmark'}'. Predicted label: '{'ARG1': 'The bridge , designed by the renowned architect who had a unique vision ,', 'V': 'became', 'ARG2': 'a popular landmark'}'.
 ----------------------------------------

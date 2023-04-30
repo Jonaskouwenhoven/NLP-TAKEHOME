@@ -12,7 +12,7 @@ pip install -r requirements.txt
 
 ## Usage
 
-To evaluate all three models (Bert-SRL, bi-LSTM, and the model from the previous assignment), the model from the previous assignment needs to be downloaded from https://drive.google.com/file/d/1lpyYyNLNhN-2M_X1zT_D19e6XnhyoXDQ/view?usp=share_link and placed in the folder bert4srl/saved_models/test/EPOCH_8. Once this is done, run the following command to evaluate all three models:
+To evaluate all three models (Bert-SRL, bi-LSTM, and the model from the previous assignment), the model from the previous assignment needs to be downloaded from https://drive.google.com/file/d/1HNUZHUFJcP7WBz_Ka90QyHsrLZY2ZSyI/view?usp=sharing and placed in the folder bert4srl/saved_models/test/EPOCH_8. Once this is done, run the following command to evaluate all three models:
 
 
 ```python
@@ -29,3 +29,7 @@ This will evalaute the two allen_nlp models
 ## data
 
 The JSON files for the 9 tests that are evaluated in this repository can be found in the 'testdata/' folder.
+
+## Log Files
+
+The Log files directory contains both error and succes logs of the different models on the different test sets. It provides a clear overview of the perfomance without having to run the code

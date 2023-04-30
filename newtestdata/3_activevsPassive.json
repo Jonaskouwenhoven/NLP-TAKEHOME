@@ -69,7 +69,7 @@
                     "Passive": {
                         "V": "kicked",
                         "ARG1": "the ball",
-                        "ARGM_AGENT": "by the boy"
+                        "ARG0": "by the boy"
                     }
                 }
             ]
